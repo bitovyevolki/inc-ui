@@ -61,7 +61,8 @@
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^8.1.11",
     "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "4.0.0-beta.1"
   },
   "dependencies": {
     "clsx": "^2.1.1",

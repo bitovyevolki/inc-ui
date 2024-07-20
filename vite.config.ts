@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import {defineConfig} from 'vite';
 import dts from 'vite-plugin-dts';
 
-// @ts-ignore
+
 import {peerDependencies,devDependencies} from './package.json';
 
 export default defineConfig({
@@ -19,7 +19,7 @@ export default defineConfig({
             fileName: 'index',
             formats: ['es', 'cjs'],
         },
-        rollupOptions: {
+
             // Exclude peer dependencies from the bundle to reduce bundle size
             rollupOptions: {
                 external: [
@@ -34,5 +34,4 @@ export default defineConfig({
                 },
             },
         },
-    },
 });
