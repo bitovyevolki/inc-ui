@@ -19,8 +19,9 @@ export default defineConfig({
             fileName: 'index',
             formats: ['es', 'cjs'],
         },
-
+        rollupOptions:{
             // Exclude peer dependencies from the bundle to reduce bundle size
+           //@ts-ignore
             rollupOptions: {
                 external: [
                     ...Object.keys(peerDependencies),
@@ -33,5 +34,7 @@ export default defineConfig({
                     format: 'es',
                 },
             },
+        }
+
         },
 });
