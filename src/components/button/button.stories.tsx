@@ -1,160 +1,160 @@
-import { type ComponentProps } from 'react'
+import { type ComponentProps } from "react";
 
-import { type Meta, type StoryObj } from '@storybook/react'
+import { type Meta, type StoryObj } from "@storybook/react";
 
-import { Button } from './button'
+import { Button } from "./button";
 
-type StoryProps = ComponentProps<typeof Button>
-type Story = StoryObj<StoryProps> & StoryParameters
+type StoryProps = ComponentProps<typeof Button>;
+type Story = StoryObj<StoryProps> & StoryParameters;
 
 type StoryParameters = {
   parameters?: {
     pseudo?: {
-      active?: boolean
-      focus?: boolean
-      hover?: boolean
-    }
-  }
-}
+      active?: boolean;
+      focus?: boolean;
+      hover?: boolean;
+    };
+  };
+};
 
 const meta = {
   argTypes: {
     as: {
       control: {
-        type: 'select',
+        type: "select",
       },
-      options: ['button', 'a'],
+      options: ["button", "a"],
     },
     disabled: {
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
   },
   component: Button,
-  tags: ['autodocs'],
-  title: 'Components/Button',
-} satisfies Meta<typeof Button>
+  tags: ["autodocs"],
+  title: "Components/UI/Button",
+} satisfies Meta<typeof Button>;
 
-export default meta
+export default meta;
 
 const defaultArgs: StoryProps = {
-  children: 'Button',
+  children: "Button",
   disabled: false,
-  type: 'button',
-  variant: 'primary',
-}
+  type: "button",
+  variant: "primary",
+};
 
 export const PrimaryBtn: Story = {
   args: {
     ...defaultArgs,
   },
-  name: 'Primary',
-}
+  name: "Primary",
+};
 
 export const PrimaryBtnHover: Story = {
   args: {
     ...defaultArgs,
   },
-  name: 'Primary hover',
+  name: "Primary hover",
   parameters: {
     pseudo: {
       hover: true,
     },
   },
-}
+};
 
 export const PrimaryBtnActive: Story = {
   args: {
     ...defaultArgs,
   },
-  name: 'Primary active',
+  name: "Primary active",
   parameters: {
     pseudo: {
       active: true,
     },
   },
-}
+};
 
 export const PrimaryBtnFocus: Story = {
   args: {
     ...defaultArgs,
-    children: 'Primary focus',
+    children: "Primary focus",
   },
-  name: 'Primary focus',
+  name: "Primary focus",
   parameters: {
     pseudo: {
       focus: true,
     },
   },
-}
+};
 
 export const PrimaryBtnDisabled: Story = {
   args: {
     ...defaultArgs,
     disabled: true,
   },
-  name: 'Primary disabled',
-}
+  name: "Primary disabled",
+};
 
 export const OutlinedBtnHover: Story = {
   args: {
     ...defaultArgs,
-    variant: 'outlined',
+    variant: "outlined",
   },
-  name: 'Outlined hover',
+  name: "Outlined hover",
   parameters: {
     pseudo: {
       hover: true,
     },
   },
-}
+};
 
 export const OutlinedBtnDisabled: Story = {
   args: {
     ...defaultArgs,
     disabled: true,
-    variant: 'outlined',
+    variant: "outlined",
   },
-  name: 'Outlined disabled',
-}
+  name: "Outlined disabled",
+};
 
 export const SecondaryBtnFocus: Story = {
   args: {
     ...defaultArgs,
-    variant: 'secondary',
+    variant: "secondary",
   },
-  name: 'Secondary focus',
+  name: "Secondary focus",
   parameters: {
     pseudo: {
       hover: true,
     },
   },
-}
+};
 
 export const SecondaryBtnDisabled: Story = {
   args: {
     ...defaultArgs,
     disabled: true,
-    variant: 'secondary',
+    variant: "secondary",
   },
-  name: 'Secondary disabled',
-}
+  name: "Secondary disabled",
+};
 
 export const AlertOnClick: Story = {
   args: {
     ...defaultArgs,
-    onClick: () => alert('Button clicked'),
+    onClick: () => alert("Button clicked"),
   },
-  name: 'On click',
-}
+  name: "On click",
+};
 
 export const ButtonAsLink: Story = {
   args: {
-    as: 'a',
-    children: 'This is a link',
-    href: 'https://google.com',
-    target: '_blank',
+    as: "a",
+    children: "This is a link",
+    href: "https://google.com",
+    target: "_blank",
   },
-  name: 'As link',
-}
+  name: "As link",
+};
