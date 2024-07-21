@@ -15,10 +15,10 @@ export function Button<T extends ElementType = 'button'>(props: ButtonProps<T>) 
   const Component = as ?? 'button'
 
   return (
-      <Component
-          {...rest}
-          className={clsx(s.button, s[variant], fullWidth && s.fullWidth, className)}
-      />
+    <Component
+      {...rest}
+      className={clsx(s.button, s[variant], fullWidth && s.fullWidth, className)}
+    />
   )
 }
 

@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { useState } from "react"
-import { Slider } from "./"
-import React from "react"
+import { useState } from 'react'
+import { Slider } from './'
+import React from 'react'
 
 const meta = {
-  title: "Components/UI/Slider",
+  title: 'Components/UI/Slider',
   component: Slider,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {},
 } satisfies Meta<typeof Slider>
 
@@ -20,7 +20,7 @@ export const SliderStory: Story = {
     min: 0,
     value: [2, 10],
   },
-  render: (args) => {
+  render: args => {
     const [sliderValue, setSliderValue] = useState<number[]>(args.value)
 
     function onChangeSliderValue(value: number[]) {
