@@ -1,0 +1,60 @@
+.TabsList {
+  display: flex;
+}
+
+.TabsTrigger {
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 45px;
+  padding: 0 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: var(--line-height-m);
+  color: var(--color-dark-100);
+
+  background-color: var(--color-dark-900);
+  border: none;
+  outline: none;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 2px;
+
+    background-color: var(--color-dark-100);
+  }
+
+  &:hover {
+    background-color: rgba(#234e99, 0.15);
+  }
+
+  &:active {
+    background-color: rgba(#73a5ff, 0.15);
+  }
+
+  // &:focus {
+  //   border: 2px solid var(--color-info-500);
+  //   border-radius: 2px;
+  // }
+}
+
+.active {
+  color: var(--color-accent-500);
+
+  &::after {
+    background-color: var(--color-accent-500);
+  }
+}
