@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Input } from './Input'
+import React from 'react'
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -37,7 +38,7 @@ export const BaseWithError: Story = {
 
 export const BaseDisabled: Story = {
   args: {
-    isDisabled: true,
+    disabled: true,
     onChange: () => {},
     placeholder: 'Email',
     value: 'Epam@epam.com',
@@ -65,7 +66,7 @@ export const SearchWithError: Story = {
 
 export const SearchDisabled: Story = {
   args: {
-    isDisabled: true,
+    disabled: true,
     onChange: () => {},
     placeholder: 'Search',
     value: 'Epam@epam.com',
@@ -94,7 +95,7 @@ export const PasswordWithError: Story = {
 
 export const PasswordDisabled: Story = {
   args: {
-    isDisabled: true,
+    disabled: true,
     onChange: () => {},
     placeholder: 'Password',
     value: 'Epam@epam.com',

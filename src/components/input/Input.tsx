@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentPropsWithoutRef, useState } from 'react'
+import { type ChangeEvent, type ComponentPropsWithoutRef, useState } from 'react'
 
 import clsx from 'clsx'
 
@@ -11,15 +11,15 @@ type InputVariantType = 'base' | 'password' | 'search'
 type MyInputPropsType = {
   className?: string
   error?: string
-  isDisabled?: boolean
+  disabled?: boolean
   onChange: (value: string) => void
   value: string
   variant: InputVariantType
-} & Omit<ComponentPropsWithoutRef<'input'>, 'onChange'>
+} & Omit<ComponentPropsWithoutRef<'input'>, 'onChange' | 'type'>
 
 export const Input = ({
   error,
-  isDisabled,
+  disabled,
   onChange,
   placeholder,
   variant = 'base',
@@ -39,12 +39,7 @@ export const Input = ({
 
   return (
     <>
-      <label
-        className={clsx(s.input, {
-          [s.disabled]: isDisabled,
-          [s.errorB]: error,
-        })}
-      >
+      <label className={clsx(s.input, disabled && s.disabled, error && s.errorB)}>
         <span className={s.placeholder}>{placeholder}</span>
         {variant === 'search' && (
           <span className={`${s.searchIcon} ${s.icon}`}>
