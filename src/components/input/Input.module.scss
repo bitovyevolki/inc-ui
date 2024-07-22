@@ -57,7 +57,7 @@
   transition: border-color 0.2s;
 
   &:focus-within {
-    border-color: var(--color-info-500) !important;
+    border-color: var(--color-accent-500) !important;
   }
 
   &:active {
