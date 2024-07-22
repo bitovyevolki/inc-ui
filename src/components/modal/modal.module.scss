@@ -1,0 +1,38 @@
+.ModalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+}
+
+.ModalContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 90vw;
+  max-width: 644px;
+  max-height: 564px;
+
+  background-color: var(--color-dark-300);
+  border: 1px solid var(--color-dark-100, #333);
+  border-radius: 2px;
+  overflow-y: auto;
+}
+.ModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 1.5rem;
+
+  border-bottom: 1px solid var(--color-dark-100, #333);
+}
+.closeButton {
+  all: unset;
+
+  cursor: pointer;
+
+  display: flex;
+
+}
