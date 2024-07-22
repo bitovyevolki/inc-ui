@@ -19,10 +19,13 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    title: 'Уведомления',
+    title: 'Dropdown menu',
   },
   render: args => (
-    <Dropdown trigger={<Icon name="more" width={24} height={24} />} title={args.title}>
+    <Dropdown
+      trigger={<Icon name="bell-outline" width={24} height={24} fill={'white'} />}
+      title={args.title}
+    >
       <DropdownItem title="Learn" icon={<Icon name="play" />} arrow={false} />
       <DropdownItem title="Edit" icon={<Icon name="edit" />} />
       <DropdownItem title="Delete" icon={<Icon name="delete" />} />
