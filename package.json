@@ -65,6 +65,7 @@
     "vite-plugin-dts": "4.0.0-beta.1"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.1.1",
     "clsx": "^2.1.1",
     "sass": "^1.77.6"
   }
