@@ -66,6 +66,7 @@
     "vite-plugin-dts": "4.0.0-beta.1"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-popover": "1.1.1",
     "@radix-ui/react-slider": "^1.2.0",
     "clsx": "^2.1.1",
