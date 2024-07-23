@@ -1,0 +1,98 @@
+.root {
+  display: flex;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  cursor: pointer;
+
+  .radio {
+    all: unset;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+
+    .indicator {
+      position: relative;
+      z-index: 10;
+
+      width: 10px;
+      height: 10px;
+
+      background-color: var(--color-light-100);
+      border-radius: 50%;
+    }
+    .frame {
+      position: absolute;
+      z-index: 10;
+      inset: 0;
+
+      box-sizing: border-box;
+
+      border: 2px solid var(--color-light-100);
+      border-radius: 50%;
+    }
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+
+      width: 36px;
+      height: 36px;
+
+      background-color: transparent;
+      border-radius: 50%;
+
+      transition: 0.3s;
+    }
+
+    &:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+      background-color: var(--color-dark-300);
+    }
+
+    &:active::before {
+      transform: translate(-50%, -50%) scale(1);
+      background-color: var(--color-dark-100);
+      transition: 0s;
+    }
+
+    &:focus-visible::before {
+      transform: translate(-50%, -50%) scale(1);
+      background-color: var(--color-dark-500);
+    }
+
+    &:disabled::before {
+      transform: translate(-50%, -50%) scale(0);
+      background-color: transparent;
+    }
+    &:disabled .frame {
+      border-color: var(--color-light-900);
+    }
+
+    &:disabled .indicator {
+      background-color: var(--color-light-900);
+    }
+  }
+}
+
+.disabled {
+  color: var(--color-light-900);
+  cursor: auto;
+}
