@@ -1,7 +1,7 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import type { ReactNode } from 'react'
 import { Typography } from '../typography'
-import s from './dropdown.module.scss'
+import s from './Dropdown.module.scss'
 
 type DropdownType = {
   trigger: ReactNode

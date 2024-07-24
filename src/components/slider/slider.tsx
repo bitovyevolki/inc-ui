@@ -1,6 +1,6 @@
 import * as SliderRadix from '@radix-ui/react-slider'
 import { Typography } from '../typography'
-import s from './slider.module.scss'
+import s from './Slider.module.scss'
 
 type Props = {
   value: number[]
