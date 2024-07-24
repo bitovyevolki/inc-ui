@@ -69,6 +69,7 @@
     "@it-incubator/eslint-config": "^1.0.3",
     "@it-incubator/stylelint-config": "^2.0.0",
     "@radix-ui/react-checkbox": "^1.1.1",
+    "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-popover": "1.1.1",
@@ -77,6 +78,8 @@
     "@radix-ui/react-slider": "^1.2.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "react-day-picker": "^9.0.2",
     "sass": "^1.77.6"
   }
 }
