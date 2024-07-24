@@ -5,7 +5,7 @@ import React from 'react'
 import { RadioGroup } from './RadioGroup'
 
 const meta = {
-  title: 'Components/UI/Radio Group',
+  title: 'Components/UI/RadioGroup',
   component: RadioGroup,
   tags: ['autodocs'],
 } satisfies Meta<typeof RadioGroup>
