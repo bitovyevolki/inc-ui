@@ -6,4 +6,3 @@ export * from './modal'
 export * from './card'
 export * from './slider'
 export * from './header'
-
