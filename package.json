@@ -67,11 +67,13 @@
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.1",
-    "@radix-ui/react-popover": "1.1.1",
+    "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slider": "^1.2.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "react-day-picker": "^9.0.2",
     "sass": "^1.77.6"
   }
 }
