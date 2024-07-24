@@ -1,0 +1,30 @@
+.textArea {
+  all: unset;
+  box-sizing: border-box;
+  font-family: inherit;
+  width: 284px;
+  height: 84px;
+  border: 1px solid var(--color-dark-100);
+  border-radius: 2px;
+  background-color: var(--color-dark-500);
+  padding-top: 12px;
+  padding-left: 12px;
+
+  &:active {
+    border: 1px solid var(--color-light-100);
+  }
+
+  &:hover {
+    border-color: var(--color-accent-500);
+  }
+
+  &:focus-visible {
+    border: 1px solid var(--color-dark-100);
+  }
+
+  &:disabled {
+    background-color: var(--color-dark-100);
+    color: var(--color-dark-100);
+    cursor: not-allowed;
+  }
+}
