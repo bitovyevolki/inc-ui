@@ -1,1 +1,1 @@
-export * from "./checkbox-ui"
+export * from "./Checkbox"
