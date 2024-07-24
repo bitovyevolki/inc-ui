@@ -1,1 +1,1 @@
-export { Slider } from './slider-ui'
+export { Slider } from './Slider'
