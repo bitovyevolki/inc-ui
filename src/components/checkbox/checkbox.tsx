@@ -3,7 +3,7 @@ import { clsx } from "clsx"
 import { type ElementRef, forwardRef } from "react"
 import { Icon } from "../icon"
 import { Typography } from "../typography"
-import s from "./checkbox.module.scss"
+import s from "./Checkbox.module.scss"
 
 export type CheckboxProps = {
   checked: boolean

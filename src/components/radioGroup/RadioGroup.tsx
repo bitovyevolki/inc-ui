@@ -2,7 +2,7 @@ import * as RadioGroupRadix from '@radix-ui/react-radio-group'
 import { clsx } from 'clsx'
 
 import { Typography } from '../typography'
-import s from './radio-group.module.scss'
+import s from './RadioGroup.module.scss'
 
 export type Option = {
   label: string
