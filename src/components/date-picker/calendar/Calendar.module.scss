@@ -1,0 +1,98 @@
+.root {
+}
+
+.months {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 24px;
+  border: 1px solid var(--color-dark-300);
+  background-color: var(--color-dark-500);
+  border-radius: 2px;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-dark-300);
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: var(--color-dark-100);
+  }
+
+  & svg {
+    fill: var(--color-light-100);
+  }
+}
+
+.captionLabel {
+  position: absolute;
+  top: 24px;
+  left: 30px;
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: var(--line-height-m);
+}
+
+.weekDay {
+  padding: 8px;
+  color: var(--color-light-900);
+  font-size: 16px;
+  line-height: var(--line-height-m);
+  font-weight: var(--font-weight-regular);
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+
+.weeks {
+}
+
+.day {
+  padding: 8px;
+  text-align: center;
+  font-size: 16px;
+  line-height: var(--line-height-m);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all 0.2s;
+
+  &:nth-child(6) {
+    color: var(--color-danger-300);
+  }
+
+  &:nth-child(7) {
+    color: var(--color-danger-300);
+  }
+
+  &:hover {
+    background-color: var(--color-dark-300);
+    color: var(--color-light-100) !important;
+  }
+}
+
+.today {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent-500);
+}
+
+.selected {
+  background-color: var(--color-accent-900) !important;
+  color: var(--color-light-100) !important;
+}
+
+.outside {
+  color: var(--color-light-900) !important;
+}

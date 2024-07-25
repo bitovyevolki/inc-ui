@@ -1,4 +1,4 @@
-import { type ElementRef, forwardRef } from 'react'
+import { type ElementRef, forwardRef, type ReactNode } from 'react'
 
 import * as S from '@radix-ui/react-select'
 import clsx from 'clsx'
@@ -8,7 +8,7 @@ import s from './Select.module.scss'
 type SelectVariantType = 'large' | 'small'
 
 export interface IOption {
-  label: string
+  label: ReactNode | string
   value: string
 }
 

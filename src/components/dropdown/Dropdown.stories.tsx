@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Icon } from '../icon'
-import { Dropdown, DropdownItem } from './dropdown'
+
+import { BellIcon } from '../../assets/icons/bell'
+import { Dropdown, DropdownItem } from './Dropdown'
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
@@ -23,12 +24,12 @@ export const Default: Story = {
   },
   render: args => (
     <Dropdown
-      trigger={<Icon name="bell-outline" width={24} height={24} fill={'white'} />}
+      trigger={<BellIcon />}
       title={args.title}
     >
-      <DropdownItem title="Learn" icon={<Icon name="play" />} arrow={false} />
-      <DropdownItem title="Edit" icon={<Icon name="edit" />} />
-      <DropdownItem title="Delete" icon={<Icon name="delete" />} />
+      <DropdownItem title="Learn" icon={<BellIcon />} arrow={false} />
+      <DropdownItem title="Edit" icon={<BellIcon />} />
+      <DropdownItem title="Delete" icon={<BellIcon />} />
     </Dropdown>
   ),
 }
