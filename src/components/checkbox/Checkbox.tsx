@@ -1,7 +1,7 @@
 import * as RadixCheckbox from '@radix-ui/react-checkbox'
 import { clsx } from 'clsx'
 import { type ElementRef, forwardRef } from 'react'
-import { Icon } from '../icon'
+import { CheckedIcon } from '../../assets/icons/checked'
 import { Typography } from '../typography'
 import s from './Checkbox.module.scss'
 
@@ -30,7 +30,7 @@ export const Checkbox = forwardRef<ElementRef<typeof RadixCheckbox.Root>, Checkb
           <div className={s.frame}></div>
           {checked && (
             <RadixCheckbox.Indicator className={s.indicator} forceMount>
-              <Icon height={24} name={'checked'} width={24} />
+              <CheckedIcon />
             </RadixCheckbox.Indicator>
           )}
         </RadixCheckbox.Root>
