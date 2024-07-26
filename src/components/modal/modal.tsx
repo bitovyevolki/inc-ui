@@ -4,7 +4,7 @@ import * as Modal from '@radix-ui/react-dialog'
 
 import s from './modal.module.scss'
 
-import { CloseIcon } from '../../assets/icons/close-outline.tsx'
+import { CloseIcon } from '../../assets/icons/close-outline'
 import { Typography } from '../typography'
 export type ModalProps = {
   children: ReactNode

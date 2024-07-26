@@ -1,1 +1,1 @@
-export * from './Text-Area.tsx'
+export * from './Text-Area'

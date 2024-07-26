@@ -1,8 +1,8 @@
 import s from './header.module.scss'
 
-import { BellIcon } from '../../assets/icons/bell.tsx'
-import { FlagRussia } from '../../assets/icons/flag-russia.tsx'
-import { FlagUnitedKingdom } from '../../assets/icons/flag-united-kingdom.tsx'
+import { BellIcon } from '../../assets/icons/bell'
+import { FlagRussia } from '../../assets/icons/flag-russia'
+import { FlagUnitedKingdom } from '../../assets/icons/flag-united-kingdom'
 import { Button } from '../button'
 import { type IOption, Select } from '../select'
 import { Typography } from '../typography'
