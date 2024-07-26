@@ -1,11 +1,10 @@
-import type { ModalProps } from './modal'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { useState } from 'react'
 
 import { Button } from '../button'
 import { Typography } from '../typography'
-import { ModalWindow } from './modal'
+import { type ModalProps, ModalWindow } from './modal'
 
 const meta: Meta<typeof ModalWindow> = {
   component: ModalWindow,

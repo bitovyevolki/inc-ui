@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import React from 'react'
-
 import { BellIcon } from '../../assets/icons/bell'
 import { Dropdown, DropdownItem } from './Dropdown'
 

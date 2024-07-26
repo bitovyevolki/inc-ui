@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import * as Popover from '@radix-ui/react-popover'
 import clsx from 'clsx'
 import { format } from 'date-fns'
