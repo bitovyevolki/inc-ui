@@ -1,4 +1,4 @@
-import { type ElementRef, forwardRef, type ReactNode } from 'react'
+import { type ElementRef, type ReactNode, forwardRef } from 'react'
 
 import * as S from '@radix-ui/react-select'
 import clsx from 'clsx'

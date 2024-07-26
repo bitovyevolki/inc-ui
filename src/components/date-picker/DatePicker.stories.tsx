@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { DatePicker } from './DatePicker'
 import React from 'react'
+
+import { DatePicker } from './DatePicker'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
   decorators: [
     Story => (
-      <div style={{ margin: '10px', height: '400px' }}>
+      <div style={{ height: '400px', margin: '10px' }}>
         <Story />
       </div>
     ),
@@ -27,14 +28,14 @@ export const Base: Story = {
 
 export const WithError: Story = {
   args: {
-    label: 'Date of birth',
     error: 'Incorrect date',
+    label: 'Date of birth',
   },
 }
 
 export const Disabled: Story = {
   args: {
-    label: 'Date of birth',
     disabled: true,
+    label: 'Date of birth',
   },
 }

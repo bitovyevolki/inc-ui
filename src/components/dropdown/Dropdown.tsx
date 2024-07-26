@@ -1,25 +1,28 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import type { ReactNode } from 'react'
-import { Typography } from '../typography'
+
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+
 import s from './Dropdown.module.scss'
 
+import { Typography } from '../typography'
+
 type DropdownType = {
-  trigger: ReactNode
   children: ReactNode
   title?: string
+  trigger: ReactNode
 }
 
-export const Dropdown = ({ children, trigger, title }: DropdownType) => {
+export const Dropdown = ({ children, title, trigger }: DropdownType) => {
   return (
     <div className={s.wrapper}>
-      <Typography variant="subTitle2">
+      <Typography variant={'subTitle2'}>
         <DropdownMenu.Root>
           <DropdownMenu.Trigger asChild>
             <div className={s.trigger}>{trigger}</div>
           </DropdownMenu.Trigger>
 
           <DropdownMenu.Portal>
-            <DropdownMenu.Content className={s.content} sideOffset={4} align={'end'}>
+            <DropdownMenu.Content align={'end'} className={s.content} sideOffset={4}>
               {title && (
                 <>
                   <p className={s.title}>{title}</p>
@@ -27,7 +30,7 @@ export const Dropdown = ({ children, trigger, title }: DropdownType) => {
                 </>
               )}
               {children}
-              <DropdownMenu.Arrow className={s.arrow} width={16} height={8} />
+              <DropdownMenu.Arrow className={s.arrow} height={8} width={16} />
             </DropdownMenu.Content>
           </DropdownMenu.Portal>
         </DropdownMenu.Root>
@@ -37,14 +40,14 @@ export const Dropdown = ({ children, trigger, title }: DropdownType) => {
 }
 
 type DropdownItemType = {
-  title: string
-  icon: ReactNode
   arrow?: boolean
+  icon: ReactNode
+  title: string
 }
 
-export const DropdownItem = ({ title, icon, arrow = true }: DropdownItemType) => {
+export const DropdownItem = ({ arrow = true, icon, title }: DropdownItemType) => {
   return (
-    <Typography variant="caption">
+    <Typography variant={'caption'}>
       {arrow && <DropdownMenu.Separator className={s.separator} />}
       <DropdownMenu.Item className={s.item}>
         {icon}

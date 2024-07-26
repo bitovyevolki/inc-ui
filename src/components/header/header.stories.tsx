@@ -1,6 +1,8 @@
-import { type Meta, type StoryObj } from '@storybook/react'
-import { Header, type LanguageType } from './Header'
 import { useState } from 'react'
+
+import { type Meta, type StoryObj } from '@storybook/react'
+
+import { Header, type LanguageType } from './Header'
 
 const meta = {
   component: Header,
@@ -35,10 +37,10 @@ export const ChangeLanguageExample: Story = {
     return (
       <Header
         {...args}
+        isAuth
         onLanguageChange={handleLanguageChange}
-        isAuth={true}
-        title="Inctagram"
         selectedLanguage={selectedLanguage}
+        title={'Inctagram'}
       />
     )
   },

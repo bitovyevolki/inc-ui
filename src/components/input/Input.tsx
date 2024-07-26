@@ -10,16 +10,16 @@ type InputVariantType = 'base' | 'password' | 'search'
 
 type MyInputPropsType = {
   className?: string
-  error?: string
   disabled?: boolean
+  error?: string
   onChange: (value: string) => void
   value: string
   variant: InputVariantType
 } & Omit<ComponentPropsWithoutRef<'input'>, 'onChange' | 'type'>
 
 export const Input = ({
-  error,
   disabled,
+  error,
   onChange,
   placeholder,
   variant = 'base',

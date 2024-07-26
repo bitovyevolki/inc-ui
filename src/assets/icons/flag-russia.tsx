@@ -1,12 +1,12 @@
-import { forwardRef, type Ref, type SVGProps } from 'react'
+import { type Ref, type SVGProps, forwardRef } from 'react'
 
 const FlagRussia = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}
     height={'20'}
+    ref={ref}
     viewBox={'0 0 20 20'}
     width={'20'}
-    ref={ref}
     xmlns={'http://www.w3.org/2000/svg'}
     {...props}
   >

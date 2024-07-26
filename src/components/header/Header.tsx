@@ -1,25 +1,26 @@
-import { Typography } from '../typography'
-import { type IOption, Select } from '../select'
 import s from './header.module.scss'
+
+import { BellIcon } from '../../assets/icons/bell.tsx'
 import { FlagRussia } from '../../assets/icons/flag-russia.tsx'
 import { FlagUnitedKingdom } from '../../assets/icons/flag-united-kingdom.tsx'
-import { BellIcon } from '../../assets/icons/bell.tsx'
 import { Button } from '../button'
-export type LanguageType = 'ru' | 'en'
+import { type IOption, Select } from '../select'
+import { Typography } from '../typography'
+export type LanguageType = 'en' | 'ru'
 export type HeaderProps = {
   isAuth: boolean
+  onLanguageChange: (value: string) => void
+  selectedLanguage?: LanguageType
   signInSrc?: string
   signUpSrc?: string
   title: string
-  onLanguageChange: (value: string) => void
-  selectedLanguage?: LanguageType
 }
 
 const options: IOption[] = [
   {
     label: (
       <div className={s.selectItem}>
-        <FlagRussia width={20} height={20} />
+        <FlagRussia height={20} width={20} />
         <Typography variant={'body1'}>{'Russian'}</Typography>
       </div>
     ),
@@ -28,20 +29,21 @@ const options: IOption[] = [
   {
     label: (
       <div className={s.selectItem}>
-        <FlagUnitedKingdom width={20} height={20} />
+        <FlagUnitedKingdom height={20} width={20} />
         <Typography variant={'body1'}>{'English'}</Typography>
       </div>
     ),
     value: 'en',
   },
 ]
+
 export const Header = ({
   isAuth,
+  onLanguageChange,
+  selectedLanguage,
   signInSrc,
   signUpSrc,
   title,
-  onLanguageChange,
-  selectedLanguage,
 }: HeaderProps) => {
   return isAuth ? (
     <header className={s.header}>
@@ -68,7 +70,7 @@ export const Header = ({
           variant={'large'}
         />
 
-        <Typography variant={'link1'} as={'a'} href={signInSrc} className={s.loginButton}>
+        <Typography as={'a'} className={s.loginButton} href={signInSrc} variant={'link1'}>
           {'Login'}
         </Typography>
         <Button as={'a'} href={signUpSrc} variant={'primary'}>

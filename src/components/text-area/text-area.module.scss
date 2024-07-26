@@ -23,11 +23,11 @@
   &:focus-visible {
     outline: none;
     border: 2px solid var(--color-accent-700);
-    color:var(--color-light-100);
+    color: var(--color-light-100);
   }
   &:active {
     border-color: var(--color-light-100);
-    color:var(--color-light-100);
+    color: var(--color-light-100);
   }
   &:hover {
     border-color: var(--color-dark-100);
@@ -46,8 +46,6 @@
       color: var(--color-dark-100);
     }
   }
-
-
 }
 .errorMessage {
   padding-left: 0.5rem;
@@ -59,4 +57,3 @@
     color: var(--color-dark-100);
   }
 }
-

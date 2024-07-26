@@ -1,14 +1,13 @@
-import { type ComponentProps } from 'react'
-import { Card } from './card'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { type ComponentProps } from 'react'
+
+import { Card } from './card'
 
 type StoryProps = ComponentProps<typeof Card>
 type Story = StoryObj<StoryProps>
 
 const meta = {
-  component: Card,
-  title: 'Components/UI/Card',
-  tags: ['autodocs'],
   argTypes: {
     as: {
       control: {
@@ -27,13 +26,16 @@ const meta = {
       },
     },
   },
+  component: Card,
+  tags: ['autodocs'],
+  title: 'Components/UI/Card',
 } satisfies Meta<typeof Card>
 
 export default meta
 
 export const CardEmptyWithStyles: Story = {
   args: {
-    style: { width: '200px', height: '200px', padding: '12px' },
+    style: { height: '200px', padding: '12px', width: '200px' },
   },
   name: 'Card with styles',
 }
