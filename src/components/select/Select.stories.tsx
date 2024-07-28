@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Select } from './Select'
 
+import { useArgs } from '@storybook/preview-api'
+
 const meta: Meta<typeof Select> = {
   argTypes: {
     variant: {
@@ -46,6 +48,23 @@ export const WithoutTitle: Story = {
     options,
     value: options[0].value,
     variant: 'small',
+  },
+}
+
+export const WithoutInitValue: Story = {
+  args: {
+    options,
+    variant: 'small',
+    placeholder: 'Country',
+  },
+  render: function Render(args) {
+    const [{ value }, updateArgs] = useArgs()
+
+    function onChange(value: string) {
+      updateArgs({ value })
+    }
+
+    return <Select {...args} onValueChange={onChange} value={value} />
   },
 }
 
