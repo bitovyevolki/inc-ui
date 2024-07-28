@@ -20,7 +20,10 @@ export function DatePicker({ date, disabled, error, label, onSelect }: IDatePick
       <div className={clsx(s.label, disabled && s.disabledTitle)}>{label}</div>
       <Popover.Root>
         <Popover.Trigger className={clsx(s.PopoverTrigger, disabled && s.disabled)}>
-          <button className={clsx(s.calBtn, error && s.calBtnError, disabled && s.disabled)}>
+          <button
+            type="button"
+            className={clsx(s.calBtn, error && s.calBtnError, disabled && s.disabled)}
+          >
             <span className={s.date}>{date ? format(date, 'PPP') : 'Pick a date'}</span>
             <span className={s.calIcon}>
               <CalendarIcon />
