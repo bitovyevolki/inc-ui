@@ -26,6 +26,16 @@ export const Base: Story = {
   },
 }
 
+export const BaseRequired: Story = {
+  args: {
+    error: 'Some error',
+    onChange: () => {},
+    placeholder: 'Email',
+    value: 'Epam@epam.com',
+    required: true,
+  },
+}
+
 export const BaseWithError: Story = {
   args: {
     error: 'Some error',
