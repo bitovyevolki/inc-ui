@@ -1,59 +1,113 @@
-import { type ChangeEvent, type ComponentPropsWithoutRef, useState } from 'react'
+import {
+  ChangeEventHandler,
+  ComponentPropsWithoutRef,
+  HTMLInputTypeAttribute,
+  RefObject,
+  forwardRef,
+  useRef,
+  useState,
+} from 'react'
 
 import clsx from 'clsx'
 
 import s from './Input.module.scss'
 
-import { CrossedEyeIcon, EyeSvg, SearchSvg } from './icons/Icons'
+import { SearchIcon } from '../../assets/icons/search-outline'
+import { Typography } from '../typography'
+import { Icon } from './Rigth-Left-Icons'
 
-type InputVariantType = 'base' | 'password' | 'search'
-
-type MyInputPropsType = {
-  className?: string
+export type InputProps = {
+  clear?: (e: any) => void
   disabled?: boolean
-  error?: string
-  onChange: (value: string) => void
-  value: string
-  variant: InputVariantType
-} & Omit<ComponentPropsWithoutRef<'input'>, 'onChange' | 'type'>
+  errorMessage?: string
+  label?: string
+  placeholder?: string
+  rootClassName?: string
+  type?: HTMLInputTypeAttribute
+  value?: string
+} & ComponentPropsWithoutRef<'input'>
 
-export const Input = ({
-  disabled,
-  error,
-  onChange,
-  placeholder,
-  variant = 'base',
-  ...props
-}: MyInputPropsType) => {
-  const [type, setType] = useState<'password' | 'text'>(
-    variant === 'password' ? 'password' : 'text'
-  )
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  (
+    {
+      className,
+      clear,
+      errorMessage,
+      label,
+      onChange,
+      placeholder,
+      rootClassName = '',
+      type,
+      value,
+      ...rest
+    },
+    ref
+  ) => {
+    const isTypeSearch = type === 'search'
+    const isTypePassword = type === 'password'
+    const innerRef = useRef<HTMLInputElement>(null)
+    const r = (ref as RefObject<HTMLInputElement>) ?? innerRef
 
-  const setTypeHandler = () => {
-    setType(type === 'text' ? 'password' : 'text')
-  }
+    const [isViewPassword, setIsViewPassword] = useState(false)
 
-  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    onChange(event.currentTarget.value)
-  }
+    const switchView = () => {
+      r?.current?.focus()
+      setIsViewPassword(prevState => !prevState)
+    }
+    const onChangeHandler: ChangeEventHandler<HTMLInputElement> = event => {
+      onChange?.(event)
+    }
 
-  return (
-    <>
-      <label className={clsx(s.input, disabled && s.disabled, error && s.errorB)}>
-        <span className={s.placeholder}>{placeholder}</span>
-        {variant === 'search' && (
-          <span className={`${s.searchIcon} ${s.icon}`}>
-            <SearchSvg />
-          </span>
+    const onClearHandler = (e: any) => {
+      r?.current?.focus()
+      clear?.(e)
+    }
+
+    return (
+      <div className={s.rootClassName}>
+        {label && (
+          <label>
+            <Typography className={clsx(s.inputLabel)} variant={'body2'}>
+              {label}
+            </Typography>
+          </label>
         )}
-        <input {...props} onChange={onChangeHandler} type={type} />
-        {variant === 'password' && (
-          <span className={`${s.eyeIcon} ${s.icon}`} onClick={setTypeHandler}>
-            {type === 'text' ? <EyeSvg /> : <CrossedEyeIcon />}
-          </span>
+
+        <div
+          className={clsx(s.inputWrapper, {
+            [s.error]: errorMessage,
+            [s.isLeft]: isTypeSearch,
+            [s.isRight]: isTypePassword || (isTypeSearch && value),
+          })}
+        >
+          <input
+            {...rest}
+            className={clsx(s.input, { [s.error]: errorMessage }, className)}
+            onChange={onChangeHandler}
+            placeholder={placeholder}
+            ref={r}
+            type={isViewPassword && isTypePassword ? 'text' : type}
+            value={value}
+          />
+          <div className={s.leftIcon}>{isTypeSearch && <SearchIcon />}</div>
+          <div className={s.rightIcon}>
+            <Icon
+              clear={onClearHandler}
+              isTypePassword={isTypePassword}
+              isTypeSearch={isTypeSearch}
+              isViewPassword={isViewPassword}
+              switchView={switchView}
+              value={value}
+            />
+          </div>
+        </div>
+
+        {errorMessage && (
+          <Typography className={clsx(s.error, s.errorMessage)} variant={'body1'}>
+            {errorMessage}
+          </Typography>
         )}
-      </label>
-      {error && <div className={s.error}>{error}</div>}
-    </>
-  )
-}
+      </div>
+    )
+  }
+)
