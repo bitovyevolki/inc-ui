@@ -1,113 +1,116 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import React, { useState } from 'react'
 
 import { Input } from './Input'
 
-const meta: Meta<typeof Input> = {
+export default {
+  argTypes: {
+    disabled: { control: 'boolean' },
+    errorMessage: { control: 'text' },
+    label: { control: 'text' },
+    onChange: { action: 'changed' },
+    placeholder: { control: 'text' },
+    type: {
+      control: {
+        options: ['text', 'number', 'email', 'password', 'date', 'search'],
+        type: 'select',
+      },
+    },
+    value: { control: 'text' },
+  },
   component: Input,
-  decorators: [
-    Story => (
-      <div style={{ margin: '10px', width: '400px' }}>
-        <Story />
-      </div>
-    ),
-  ],
-  tags: ['autodocs'],
   title: 'Components/UI/Input',
-} satisfies Meta<typeof Input>
-
-export default meta
-type Story = StoryObj<typeof meta>
-
-export const Base: Story = {
-  args: {
-    onChange: () => {},
-    placeholder: 'Email',
-    value: 'Epam@epam.com',
-  },
 }
 
-export const BaseRequired: Story = {
-  args: {
-    error: 'Some error',
-    onChange: () => {},
-    placeholder: 'Email',
-    value: 'Epam@epam.com',
-    required: true,
-  },
+export const DefaultExample: React.FC = () => {
+  const [value, setValue] = useState<string | undefined>('')
+
+  return (
+    <Input
+      disabled={false}
+      label={'Default Input'}
+      onChange={e => setValue(e.target.value)}
+      placeholder={'Placeholder'}
+      type={'text'}
+      value={value}
+    />
+  )
 }
 
-export const BaseWithError: Story = {
-  args: {
-    error: 'Some error',
-    onChange: () => {},
-    placeholder: 'Email',
-    value: 'Epam@epam.com',
-  },
+
+export const DisabledExample: React.FC = () => (
+  <Input
+    disabled
+    label={'Default Input disabled'}
+    placeholder={'Placeholder'}
+    type={'text'}
+    value={''}
+  />
+)
+
+
+export const WithErrorMessageExample: React.FC = () => (
+  <Input
+    disabled={false}
+    errorMessage={'ErrorMessage'}
+    label={'Input with error message'}
+    placeholder={'Placeholder'}
+    type={'text'}
+    value={''}
+  />
+)
+
+export const PasswordExample: React.FC = () => {
+  const [value, setValue] = useState<string | undefined>('')
+
+  return (
+    <Input
+      disabled={false}
+      label={'password'}
+      onChange={e => setValue(e.target.value)}
+      placeholder={'Enter search query'}
+      type={'password'}
+      value={value}
+    />
+  )
 }
 
-export const BaseDisabled: Story = {
-  args: {
-    disabled: true,
-    onChange: () => {},
-    placeholder: 'Email',
-    value: 'Epam@epam.com',
-  },
+export const SearchExample: React.FC = () => {
+  const [value, setValue] = useState<string | undefined>('')
+
+  const handleClear = () => {
+    setValue('')
+  }
+
+  return (
+    <Input
+      clear={handleClear}
+      disabled={false}
+      label={'Search'}
+      onChange={e => setValue(e.target.value)}
+      placeholder={'Enter search query'}
+      type={'search'}
+      value={value}
+    />
+  )
 }
 
-export const Search: Story = {
-  args: {
-    onChange: () => {},
-    placeholder: 'Search',
-    value: 'Epam@epam.com',
-    variant: 'search',
-  },
-}
+export const SearchWithErrorExample: React.FC = () => {
+  const [value, setValue] = useState<string | undefined>('')
 
-export const SearchWithError: Story = {
-  args: {
-    error: 'Some error',
-    onChange: () => {},
-    placeholder: 'Search',
-    value: 'Epam@epam.com',
-    variant: 'search',
-  },
-}
+  const handleClear = () => {
+    setValue('')
+  }
 
-export const SearchDisabled: Story = {
-  args: {
-    disabled: true,
-    onChange: () => {},
-    placeholder: 'Search',
-    value: 'Epam@epam.com',
-    variant: 'search',
-  },
-}
-
-export const Password: Story = {
-  args: {
-    onChange: () => {},
-    placeholder: 'Password',
-    value: 'Epam@epam.com',
-    variant: 'password',
-  },
-}
-
-export const PasswordWithError: Story = {
-  args: {
-    error: 'Some error',
-    onChange: () => {},
-    placeholder: 'Password',
-    value: 'Epam@epam.com',
-    variant: 'password',
-  },
-}
-
-export const PasswordDisabled: Story = {
-  args: {
-    disabled: true,
-    onChange: () => {},
-    placeholder: 'Password',
-    value: 'Epam@epam.com',
-    variant: 'password',
-  },
+  return (
+    <Input
+      clear={handleClear}
+      disabled={false}
+      errorMessage={'errorMessage'}
+      label={'Search'}
+      onChange={e => setValue(e.target.value)}
+      placeholder={'Enter search query'}
+      type={'search'}
+      value={value}
+    />
+  )
 }
