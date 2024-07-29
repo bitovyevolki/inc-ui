@@ -1,4 +1,4 @@
-import {type ElementRef, forwardRef, type ReactNode} from 'react'
+import { type ElementRef, type ReactNode, forwardRef } from 'react'
 
 import * as S from '@radix-ui/react-select'
 import clsx from 'clsx'
@@ -18,15 +18,16 @@ interface ISelectProps {
   onValueChange: (value: string) => void
   options: IOption[]
   title?: string
-  value:  string
+  value: string
   variant: SelectVariantType
+  placeholder?: string
 }
 
 export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
-  ({ defaultValue, disabled, onValueChange, options, title, value, variant }, ref) => {
+  ({ defaultValue, disabled, onValueChange, options, title, value, variant, placeholder }, ref) => {
     return (
       <>
-        <div className={s.title}>{title}</div>
+        {title && <div className={s.title}>{title}</div>}
         <S.Root
           defaultValue={defaultValue}
           disabled={disabled}
@@ -42,7 +43,7 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
             )}
             ref={ref}
           >
-            <S.Value placeholder={value} />
+            <S.Value placeholder={placeholder} />
             <S.Icon>
               <svg
                 className={s.Icon}

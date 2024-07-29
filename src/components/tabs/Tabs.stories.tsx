@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { type IOption } from '../select'
 import { Tabs } from './Tabs'
-import React from 'react'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,

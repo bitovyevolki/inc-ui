@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
-import { Icon } from '../icon'
+
+import { BellIcon } from '../../assets/icons/bell'
 import { Dropdown, DropdownItem } from './Dropdown'
 
 const meta: Meta<typeof Dropdown> = {
-  component: Dropdown,
-  tags: ['autodocs'],
-  title: 'Components/UI/DropdownMenu',
   argTypes: {
     title: {
       control: { type: 'text' },
     },
   },
+  component: Dropdown,
+  tags: ['autodocs'],
+  title: 'Components/UI/DropdownMenu',
 }
 
 export default meta
@@ -22,13 +22,10 @@ export const Default: Story = {
     title: 'Dropdown menu',
   },
   render: args => (
-    <Dropdown
-      trigger={<Icon name="bell-outline" width={24} height={24} fill={'white'} />}
-      title={args.title}
-    >
-      <DropdownItem title="Learn" icon={<Icon name="play" />} arrow={false} />
-      <DropdownItem title="Edit" icon={<Icon name="edit" />} />
-      <DropdownItem title="Delete" icon={<Icon name="delete" />} />
+    <Dropdown title={args.title} trigger={<BellIcon />}>
+      <DropdownItem arrow={false} icon={<BellIcon />} title={'Learn'} />
+      <DropdownItem icon={<BellIcon />} title={'Edit'} />
+      <DropdownItem icon={<BellIcon />} title={'Delete'} />
     </Dropdown>
   ),
 }

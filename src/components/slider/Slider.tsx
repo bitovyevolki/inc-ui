@@ -1,22 +1,24 @@
 import * as SliderRadix from '@radix-ui/react-slider'
-import { Typography } from '../typography'
+
 import s from './Slider.module.scss'
 
+import { Typography } from '../typography'
+
 type Props = {
-  value: number[]
-  onChange?: (newValue: number[]) => void
   max?: number
   min?: number
+  onChange?: (newValue: number[]) => void
   step?: number
+  value: number[]
 }
 
 export const Slider = (props: Props) => {
-  const { value, onChange, max = 10, min = 0, step = 1 } = props
+  const { max = 10, min = 0, onChange, step = 1, value } = props
 
   return (
     <div className={s.wrapper}>
       <div>
-        <Typography variant="body1" className={s.count}>
+        <Typography className={s.count} variant={'body1'}>
           {value[0]}
         </Typography>
       </div>
@@ -25,14 +27,14 @@ export const Slider = (props: Props) => {
         defaultValue={value}
         max={max}
         min={min}
-        step={step}
         onValueChange={onChange}
+        step={step}
       >
         <SliderRadix.Track className={s.SliderTrack}>
           <SliderRadix.Range className={s.SliderRange} />
         </SliderRadix.Track>
-        <SliderRadix.Thumb className={s.SliderThumb} aria-label="Volume" />
-        <SliderRadix.Thumb className={s.SliderThumb} aria-label="Volume" />
+        <SliderRadix.Thumb aria-label={'Volume'} className={s.SliderThumb} />
+        <SliderRadix.Thumb aria-label={'Volume'} className={s.SliderThumb} />
       </SliderRadix.Root>
       <div>
         <span className={s.count}>{value[1]}</span>

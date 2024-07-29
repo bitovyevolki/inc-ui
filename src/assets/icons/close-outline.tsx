@@ -1,6 +1,5 @@
-import { forwardRef } from 'react';
-import type { Ref, SVGProps } from 'react';
-
+import { forwardRef } from 'react'
+import type { Ref, SVGProps } from 'react'
 
 const CloseIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg

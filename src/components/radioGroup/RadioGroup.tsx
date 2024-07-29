@@ -1,8 +1,9 @@
 import * as RadioGroupRadix from '@radix-ui/react-radio-group'
 import { clsx } from 'clsx'
 
-import { Typography } from '../typography'
 import s from './RadioGroup.module.scss'
+
+import { Typography } from '../typography'
 
 export type Option = {
   label: string
@@ -10,11 +11,11 @@ export type Option = {
 }
 
 export type RadioGroupProps = {
-  options: Option[]
-  name?: string
-  value?: string
-  onValueChange?: (value: string) => void
   disabled?: boolean
+  name?: string
+  onValueChange?: (value: string) => void
+  options: Option[]
+  value?: string
 }
 
 export const RadioGroup = ({ options, ...rest }: RadioGroupProps) => {
@@ -23,8 +24,8 @@ export const RadioGroup = ({ options, ...rest }: RadioGroupProps) => {
   return (
     <RadioGroupRadix.Root aria-label={'Aria label'} {...rest} className={s.root}>
       {options.map(el => (
-        <Typography as={'label'} variant={'body2'} key={el.value} className={labelClasses}>
-          <RadioGroupRadix.Item value={el.value} className={s.radio}>
+        <Typography as={'label'} className={labelClasses} key={el.value} variant={'body2'}>
+          <RadioGroupRadix.Item className={s.radio} value={el.value}>
             <div className={s.frame}></div>
             <RadioGroupRadix.Indicator className={s.indicator} />
           </RadioGroupRadix.Item>

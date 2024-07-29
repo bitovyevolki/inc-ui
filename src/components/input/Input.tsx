@@ -9,19 +9,21 @@ import { CrossedEyeIcon, EyeSvg, SearchSvg } from './icons/Icons'
 type InputVariantType = 'base' | 'password' | 'search'
 
 type MyInputPropsType = {
+  required?: boolean
   className?: string
-  error?: string
   disabled?: boolean
+  error?: string
   onChange: (value: string) => void
   value: string
   variant: InputVariantType
 } & Omit<ComponentPropsWithoutRef<'input'>, 'onChange' | 'type'>
 
 export const Input = ({
-  error,
   disabled,
+  error,
   onChange,
   placeholder,
+  required,
   variant = 'base',
   ...props
 }: MyInputPropsType) => {
@@ -40,7 +42,10 @@ export const Input = ({
   return (
     <>
       <label className={clsx(s.input, disabled && s.disabled, error && s.errorB)}>
-        <span className={s.placeholder}>{placeholder}</span>
+        <span className={s.placeholder}>
+          {placeholder}
+          {required && <span className={s.requiredIcon}>*</span>}
+        </span>
         {variant === 'search' && (
           <span className={`${s.searchIcon} ${s.icon}`}>
             <SearchSvg />

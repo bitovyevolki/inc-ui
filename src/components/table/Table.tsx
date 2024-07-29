@@ -40,4 +40,4 @@ const Cell = ({ className, ...rest }: ComponentPropsWithoutRef<'td'>) => {
   return <td className={classes} {...rest} />
 }
 
-export const Table = { Root, Head, HeadCell, Body, Row, Cell }
+export const Table = { Body, Cell, Head, HeadCell, Root, Row }

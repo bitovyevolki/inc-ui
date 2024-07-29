@@ -1,9 +1,9 @@
+import type { IOption } from '../select'
+
 import * as T from '@radix-ui/react-tabs'
 import clsx from 'clsx'
 
 import s from './Tabs.module.scss'
-
-import type { IOption } from '../select'
 
 interface ITabsProps {
   defaultValue?: string

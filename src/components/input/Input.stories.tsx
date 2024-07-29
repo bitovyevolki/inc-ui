@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Input } from './Input'
-import React from 'react'
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -24,6 +23,16 @@ export const Base: Story = {
     onChange: () => {},
     placeholder: 'Email',
     value: 'Epam@epam.com',
+  },
+}
+
+export const BaseRequired: Story = {
+  args: {
+    error: 'Some error',
+    onChange: () => {},
+    placeholder: 'Email',
+    value: 'Epam@epam.com',
+    required: true,
   },
 }
 

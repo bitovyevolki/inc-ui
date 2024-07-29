@@ -1,7 +1,8 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react'
 
-import s from './card.module.scss'
 import clsx from 'clsx'
+
+import s from './card.module.scss'
 
 const DEFAULT_TYPE = 'div'
 
@@ -10,8 +11,8 @@ type CardProps<T extends ElementType = typeof DEFAULT_TYPE> = {
 } & ComponentPropsWithoutRef<T>
 
 export const Card = <T extends ElementType = typeof DEFAULT_TYPE>({
-  className,
   as,
+  className,
   ...rest
 }: CardProps<T>) => {
   const Component = as ?? DEFAULT_TYPE
