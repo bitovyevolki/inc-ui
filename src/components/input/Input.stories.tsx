@@ -36,6 +36,7 @@ export const DefaultExample: React.FC = () => {
   )
 }
 
+
 export const DisabledExample: React.FC = () => (
   <Input
     disabled
@@ -45,6 +46,7 @@ export const DisabledExample: React.FC = () => (
     value={''}
   />
 )
+
 
 export const WithErrorMessageExample: React.FC = () => (
   <Input

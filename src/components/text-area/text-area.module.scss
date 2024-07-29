@@ -48,11 +48,9 @@
   }
 }
 .errorMessage {
-  padding-left: 0.5rem;
   color: var(--color-danger-700) !important;
 }
 .label {
-  padding-left: 0.5rem;
   &.disabled {
     color: var(--color-dark-100);
   }

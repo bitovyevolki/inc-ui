@@ -16,6 +16,7 @@ import { SearchIcon } from '../../assets/icons/search-outline'
 import { Typography } from '../typography'
 import { Icon } from './Rigth-Left-Icons'
 
+
 export type InputProps = {
   clear?: (e: any) => void
   disabled?: boolean
@@ -26,6 +27,8 @@ export type InputProps = {
   type?: HTMLInputTypeAttribute
   value?: string
 } & ComponentPropsWithoutRef<'input'>
+
+
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -58,6 +61,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       onChange?.(event)
     }
 
+
     const onClearHandler = (e: any) => {
       r?.current?.focus()
       clear?.(e)
@@ -71,6 +75,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               {label}
             </Typography>
           </label>
+
         )}
 
         <div

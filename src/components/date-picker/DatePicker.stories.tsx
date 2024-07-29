@@ -31,6 +31,13 @@ export const WithError: Story = {
   },
 }
 
+export const WithInitValue: Story = {
+  args: {
+    label: 'Date of birth',
+    date: new Date(),
+  },
+}
+
 export const Disabled: Story = {
   args: {
     disabled: true,
