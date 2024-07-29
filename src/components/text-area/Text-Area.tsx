@@ -19,7 +19,7 @@ export const TextArea = forwardRef<ElementRef<'textarea'>, TextAreaProps>((props
     <div className={clsx(s.warapper)}>
       {label && (
         <label>
-          <Typography className={clsx(s.label, disabled && s.disabled)} variant={'body2'}>
+          <Typography className={clsx(s.label, disabled && s.disabled)} variant={'body1'}>
             {label}
           </Typography>
         </label>
