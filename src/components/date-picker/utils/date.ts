@@ -1,11 +1,11 @@
-export const getDateViewWithDots = (date: Date): string => {
+export const getDateViewWithSlash = (date: Date): string => {
   if (!date) return ''
 
   date = new Date(date)
 
-  return `${getCorrectDateNumber(date.getDate())}.${getCorrectDateNumber(
+  return `${getCorrectDateNumber(date.getDate())}/${getCorrectDateNumber(
     date.getMonth() + 1
-  )}.${date.getFullYear()}`
+  )}/${date.getFullYear()}`
 }
 
 const getCorrectDateNumber = (num: number) => {
