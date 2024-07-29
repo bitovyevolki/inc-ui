@@ -1,10 +1,13 @@
-import * as Popover from '@radix-ui/react-popover'
-import clsx from 'clsx'
 import { format } from 'date-fns'
 
 import s from './DatePicker.module.scss'
 
 import { Calendar } from './calendar/Calendar'
+
+import * as Popover from '@radix-ui/react-popover'
+
+import clsx from 'clsx'
+import { getDateViewWithDots } from './utils/date'
 
 interface IDatePickerProps {
   date: Date
@@ -24,7 +27,7 @@ export function DatePicker({ date, disabled, error, label, onSelect }: IDatePick
             type="button"
             className={clsx(s.calBtn, error && s.calBtnError, disabled && s.disabled)}
           >
-            <span className={s.date}>{date ? format(date, 'PPP') : 'Pick a date'}</span>
+            <span className={s.date}>{date ? getDateViewWithDots(date) : 'Pick a date'}</span>
             <span className={s.calIcon}>
               <CalendarIcon />
             </span>
