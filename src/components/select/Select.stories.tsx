@@ -2,8 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Select } from './Select'
 
-
-
 const meta: Meta<typeof Select> = {
   argTypes: {
     variant: {
@@ -48,6 +46,14 @@ export const WithoutTitle: Story = {
     options,
     value: options[0].value,
     variant: 'small',
+  },
+}
+
+export const WithPlaceholder: Story = {
+  args: {
+    options,
+    placeholder: 'Country',
+    variant: 'large',
   },
 }
 
