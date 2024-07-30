@@ -7,19 +7,19 @@ import s from './Tabs.module.scss'
 
 interface ITabsProps {
   defaultValue?: string
-  onValueChange: (value: string) => void
+  onChange: (value: string) => void
   options: ({
     disabled?: boolean
   } & IOption)[]
   value: string
 }
 
-export const Tabs = ({ defaultValue, onValueChange, options, value }: ITabsProps) => {
+export const Tabs = ({ defaultValue, onChange, options, value }: ITabsProps) => {
   return (
     <T.Root
       className={s.TabsRoot}
       defaultValue={defaultValue}
-      onValueChange={onValueChange}
+      onValueChange={onChange}
       value={value}
     >
       <T.List className={s.TabsList}>
