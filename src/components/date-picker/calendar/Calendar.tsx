@@ -7,17 +7,25 @@ import s from './Calendar.module.scss'
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
-function Calendar({ showOutsideDays = true, ...props }: CalendarProps) {
+export const Calendar = ({ showOutsideDays = true, ...props }: CalendarProps) => {
   return (
     <DayPicker
+      captionLayout="dropdown"
       className={s.root}
       classNames={{
         button_next: s.navBtn,
         button_previous: s.navBtn,
         caption_label: s.captionLabel,
+        months_dropdown: s.monthsDropdown,
         day: s.day,
         month: s.month,
         months: s.months,
+        dropdown_root: s.dropdownRoot,
+        dropdowns: s.dropdowns,
+        dropdown: s.dropdown,
+        chevron: s.chevron,
+        month_caption: s.monthCaption,
+        years_dropdown: s.yearsDropdown,
         nav: s.nav,
         outside: s.outside,
         range_end: s.range_end,
@@ -33,5 +41,3 @@ function Calendar({ showOutsideDays = true, ...props }: CalendarProps) {
   )
 }
 Calendar.displayName = 'Calendar'
-
-export { Calendar }
