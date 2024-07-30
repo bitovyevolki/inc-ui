@@ -3,8 +3,12 @@ import clsx from 'clsx'
 import s from './Pagination.module.scss'
 
 import { type IOption, Select } from '../select'
-import { EllipsisSvg, LeftArrowSvg, RightArrowSvg } from './icons/icons'
+
 import { ELLIPSIS, usePagination } from './usePagination'
+
+import { EllipsisSvg } from '../../assets/icons/ellipsis'
+import { RightArrowSvg } from '../../assets/icons/right-arrow'
+import { LeftArrowSvg } from '../../assets/icons/left-arrow'
 
 const options: IOption[] = [
   {
