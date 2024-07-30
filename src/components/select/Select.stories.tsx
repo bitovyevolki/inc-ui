@@ -66,6 +66,16 @@ export const Small: Story = {
   },
 }
 
+export const WithError: Story = {
+  args: {
+    options,
+    title: 'Portion size',
+    value: options[0].value,
+    variant: 'large',
+    errorMessage: 'Some error',
+  },
+}
+
 export const Disabled: Story = {
   args: {
     disabled: true,

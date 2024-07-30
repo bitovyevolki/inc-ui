@@ -17,7 +17,5 @@ export function FormSelect<T extends FieldValues>({ control, name, ...rest }: Fo
     name,
   })
 
-  return (
-    <Select errorMessage={error?.message} {...rest} onValueChange={field.onChange} {...field} />
-  )
+  return <Select errorMessage={error?.message} {...rest} {...field} />
 }
