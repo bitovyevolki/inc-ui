@@ -4,6 +4,8 @@ import * as S from '@radix-ui/react-select'
 import clsx from 'clsx'
 
 import s from './Select.module.scss'
+import { Typography } from '../typography'
+import { ArrowDownIcon } from '../../assets/icons/arrow-down'
 
 type SelectVariantType = 'large' | 'small'
 
@@ -12,10 +14,11 @@ export interface IOption {
   value: string
 }
 
-interface ISelectProps {
+export interface ISelectProps {
   defaultValue?: string
   disabled?: boolean
-  onValueChange: (value: string) => void
+  errorMessage?: string
+  onChange: (value: string) => void
   options: IOption[]
   title?: string
   value: string
@@ -24,23 +27,29 @@ interface ISelectProps {
 }
 
 export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
-  ({ defaultValue, disabled, onValueChange, options, title, value, variant, placeholder }, ref) => {
+  (
+    { defaultValue, disabled, onChange, options, title, value, variant, placeholder, errorMessage },
+    ref
+  ) => {
     return (
       <>
-        {title && <div className={s.title}>{title}</div>}
+        {title && (
+          <Typography variant="body1" className={s.title}>
+            {title}
+          </Typography>
+        )}
         <S.Root
           defaultValue={defaultValue}
           disabled={disabled}
-          onValueChange={onValueChange}
+          onValueChange={onChange}
           value={value}
         >
           <S.Trigger
-            className={clsx(
-              s.SelectTrigger,
-              disabled && s.disabled,
-              variant === 'large' && s.large,
-              variant === 'small' && s.small
-            )}
+            className={clsx(s.SelectTrigger, {
+              [s.disabled]: disabled,
+              [s.large]: variant === 'large',
+              [s.small]: variant === 'small',
+            })}
             ref={ref}
           >
             <S.Value placeholder={placeholder} />
@@ -52,6 +61,7 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
                 viewBox={'0 0 24 24'}
                 width={'24'}
                 xmlns={'http://www.w3.org/2000/svg'}
+                ref={ref}
               >
                 <g clipPath={'url(#clip0_376_8949)'}>
                   <path
@@ -67,9 +77,9 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
                   </clipPath>
                 </defs>
               </svg>
+              {/* <ArrowDownIcon className={s.Icon} /> */}
             </S.Icon>
           </S.Trigger>
-
           <S.Portal>
             <S.Content className={clsx(s.SelectContent)} position={'popper'}>
               <S.Viewport>
@@ -92,7 +102,14 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
             </S.Content>
           </S.Portal>
         </S.Root>
+        {errorMessage && (
+          <Typography variant="body1" className={s.errorMessage}>
+            {errorMessage}
+          </Typography>
+        )}
       </>
     )
   }
 )
+
+Select.displayName = 'Select'

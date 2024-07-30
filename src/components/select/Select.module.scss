@@ -1,6 +1,5 @@
 .title {
   margin-bottom: 2px;
-  line-height: var(--line-height-m);
   color: var(--color-light-900);
 }
 
@@ -115,4 +114,8 @@
   &:last-child {
     border: 0;
   }
+}
+
+.errorMessage {
+  color: var(--color-danger-500) !important;
 }
