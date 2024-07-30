@@ -17,7 +17,7 @@ export type CheckboxProps = {
   onChange?: (checked: boolean) => void
 }
 export const Checkbox = forwardRef<ElementRef<typeof RadixCheckbox.Root>, CheckboxProps>(
-  ({ checked, className, disabled, id, label, onChange }, ref) => {
+  ({ checked, className, disabled, id, label, onChange, ...rest }, ref) => {
     const styles = clsx(s.label, disabled && s.disabled, className)
 
     return (
@@ -29,6 +29,7 @@ export const Checkbox = forwardRef<ElementRef<typeof RadixCheckbox.Root>, Checkb
           id={id}
           onCheckedChange={onChange}
           ref={ref}
+					{...rest}
         >
           <div className={s.frame}></div>
           {checked && (
