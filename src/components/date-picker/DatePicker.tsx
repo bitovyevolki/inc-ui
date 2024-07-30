@@ -7,15 +7,15 @@ import * as Popover from '@radix-ui/react-popover'
 import clsx from 'clsx'
 import { getDateViewWithSlash } from './utils/date'
 
-interface IDatePickerProps {
-  date: Date
+export interface IDatePickerProps {
+  value: Date
   disabled?: boolean
-  error?: string
+  errorMessage?: string
   label?: string
-  onSelect: (date: Date | undefined) => void
+  onChange: (date: Date | undefined) => void
 }
 
-export function DatePicker({ date, disabled, error, label, onSelect }: IDatePickerProps) {
+export function DatePicker({ value, disabled, errorMessage, label, onChange }: IDatePickerProps) {
   return (
     <div className={s.container}>
       <div className={clsx(s.label, disabled && s.disabledTitle)}>{label}</div>
@@ -23,19 +23,19 @@ export function DatePicker({ date, disabled, error, label, onSelect }: IDatePick
         <Popover.Trigger className={clsx(s.PopoverTrigger, disabled && s.disabled)}>
           <button
             type="button"
-            className={clsx(s.calBtn, error && s.calBtnError, disabled && s.disabled)}
+            className={clsx(s.calBtn, errorMessage && s.calBtnError, disabled && s.disabled)}
           >
-            <span className={s.date}>{date ? getDateViewWithSlash(date) : 'Pick a date'}</span>
+            <span className={s.date}>{value ? getDateViewWithSlash(value) : 'Pick a date'}</span>
             <span className={s.calIcon}>
               <CalendarIcon />
             </span>
           </button>
         </Popover.Trigger>
         <Popover.Content align={'start'} className={s.PopoverContent}>
-          <Calendar mode={'single'} onSelect={onSelect} selected={date} />
+          <Calendar mode={'single'} onSelect={onChange} selected={value} />
         </Popover.Content>
       </Popover.Root>
-      {error && <div className={s.error}>{error}</div>}
+      {errorMessage && <div className={s.error}>{errorMessage}</div>}
     </div>
   )
 }

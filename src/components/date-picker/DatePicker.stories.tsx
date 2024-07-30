@@ -26,7 +26,7 @@ export const Base: Story = {
 
 export const WithError: Story = {
   args: {
-    error: 'Incorrect date',
+    errorMessage: 'Incorrect date',
     label: 'Date of birth',
   },
 }
@@ -34,7 +34,7 @@ export const WithError: Story = {
 export const WithInitValue: Story = {
   args: {
     label: 'Date of birth',
-    date: new Date(),
+    value: new Date(),
   },
 }
 
