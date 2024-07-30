@@ -91,7 +91,7 @@ export const Pagination = ({
       <span>Show</span>
       <div className={s.selectBox}>
         <Select
-          onValueChange={onChangePortionSizeHandler}
+          onChange={onChangePortionSizeHandler}
           options={options}
           value={String(portionSize)}
           variant={'small'}
