@@ -4,6 +4,7 @@ import * as S from '@radix-ui/react-select'
 import clsx from 'clsx'
 
 import s from './Select.module.scss'
+import { Typography } from '../typography'
 
 type SelectVariantType = 'large' | 'small'
 
@@ -27,7 +28,11 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
   ({ defaultValue, disabled, onValueChange, options, title, value, variant, placeholder }, ref) => {
     return (
       <>
-        {title && <div className={s.title}>{title}</div>}
+        {title && (
+          <Typography variant="body1" className={s.title}>
+            {title}
+          </Typography>
+        )}
         <S.Root
           defaultValue={defaultValue}
           disabled={disabled}
@@ -35,12 +40,11 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
           value={value}
         >
           <S.Trigger
-            className={clsx(
-              s.SelectTrigger,
-              disabled && s.disabled,
-              variant === 'large' && s.large,
-              variant === 'small' && s.small
-            )}
+            className={clsx(s.SelectTrigger, {
+              [s.disabled]: disabled,
+              [s.large]: variant === 'large',
+              [s.small]: variant === 'small',
+            })}
             ref={ref}
           >
             <S.Value placeholder={placeholder} />
