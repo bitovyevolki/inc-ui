@@ -41,3 +41,5 @@ export const Tabs = ({ defaultValue, onChange, options, value }: ITabsProps) => 
     </T.Root>
   )
 }
+
+Tabs.displayName = 'Tabs'
