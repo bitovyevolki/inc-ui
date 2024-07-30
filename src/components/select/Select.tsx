@@ -13,9 +13,10 @@ export interface IOption {
   value: string
 }
 
-interface ISelectProps {
+export interface ISelectProps {
   defaultValue?: string
   disabled?: boolean
+  errorMessage?: string
   onValueChange: (value: string) => void
   options: IOption[]
   title?: string
@@ -25,7 +26,20 @@ interface ISelectProps {
 }
 
 export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
-  ({ defaultValue, disabled, onValueChange, options, title, value, variant, placeholder }, ref) => {
+  (
+    {
+      defaultValue,
+      disabled,
+      onValueChange,
+      options,
+      title,
+      value,
+      variant,
+      placeholder,
+      errorMessage,
+    },
+    ref
+  ) => {
     return (
       <>
         {title && (
@@ -96,6 +110,7 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
             </S.Content>
           </S.Portal>
         </S.Root>
+        {errorMessage && <Typography variant="body1"></Typography>}
       </>
     )
   }
