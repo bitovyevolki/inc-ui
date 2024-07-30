@@ -17,7 +17,7 @@ export interface ISelectProps {
   defaultValue?: string
   disabled?: boolean
   errorMessage?: string
-  onValueChange: (value: string) => void
+  onChange: (value: string) => void
   options: IOption[]
   title?: string
   value: string
@@ -27,17 +27,7 @@ export interface ISelectProps {
 
 export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
   (
-    {
-      defaultValue,
-      disabled,
-      onValueChange,
-      options,
-      title,
-      value,
-      variant,
-      placeholder,
-      errorMessage,
-    },
+    { defaultValue, disabled, onChange, options, title, value, variant, placeholder, errorMessage },
     ref
   ) => {
     return (
@@ -50,7 +40,7 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
         <S.Root
           defaultValue={defaultValue}
           disabled={disabled}
-          onValueChange={onValueChange}
+          onValueChange={onChange}
           value={value}
         >
           <S.Trigger
@@ -110,7 +100,11 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
             </S.Content>
           </S.Portal>
         </S.Root>
-        {errorMessage && <Typography variant="body1"></Typography>}
+        {errorMessage && (
+          <Typography variant="body1" className={s.errorMessage}>
+            {errorMessage}
+          </Typography>
+        )}
       </>
     )
   }
