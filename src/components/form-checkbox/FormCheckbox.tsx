@@ -12,9 +12,7 @@ export function FormCheckbox<T extends FieldValues>({
   name,
   ...rest
 }: FormCheckboxProps<T>) {
-  const {
-    field
-  } = useController({
+  const { field } = useController({
     control,
     name,
   })
