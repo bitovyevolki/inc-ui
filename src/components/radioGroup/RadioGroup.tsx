@@ -11,18 +11,16 @@ export type Option = {
 }
 
 export type RadioGroupProps = {
-  disabled?: boolean
-  name?: string
-  onValueChange?: (value: string) => void
+  onValueChange: (value: string) => void
   options: Option[]
-  value?: string
-}
+  value: string
+} & RadioGroupRadix.RadioGroupProps
 
 export const RadioGroup = ({ options, ...rest }: RadioGroupProps) => {
   const labelClasses = clsx(s.item, rest.disabled && s.disabled)
 
   return (
-    <RadioGroupRadix.Root aria-label={'Aria label'} {...rest} className={s.root}>
+    <RadioGroupRadix.Root {...rest} className={s.root}>
       {options.map(el => (
         <Typography as={'label'} className={labelClasses} key={el.value} variant={'body2'}>
           <RadioGroupRadix.Item className={s.radio} value={el.value}>
