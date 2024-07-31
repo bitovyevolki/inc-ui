@@ -21,14 +21,16 @@ type Story = StoryObj<typeof meta>
 export const DefaultControlledGroup: Story = {
   args: {
     options: baseData,
+    onValueChange: () => {},
+    value: '1',
   },
 
   render: args => {
-    const [value, setValue] = useState('1')
+    const [value, setValue] = useState(args.value)
 
     return (
       <>
-        <RadioGroup {...args} onValueChange={setValue} value={value} />
+        <RadioGroup options={args.options} onValueChange={setValue} value={value} />
         <div style={{ marginTop: '10px' }}>Selected value: {value}</div>
       </>
     )
@@ -40,5 +42,6 @@ export const DisabledGroup: Story = {
     disabled: true,
     options: baseData,
     value: '1',
+    onValueChange: () => {},
   },
 }
