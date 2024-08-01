@@ -15,7 +15,7 @@ import s from './Input.module.scss'
 import { SearchIcon } from '../../assets/icons/search-outline'
 import { Typography } from '../typography'
 import { Icon } from './Rigth-Left-Icons'
-
+import { useGenerateId } from './useGenerateId'
 
 export type InputProps = {
   clear?: (e: any) => void
@@ -28,17 +28,18 @@ export type InputProps = {
   value?: string
 } & ComponentPropsWithoutRef<'input'>
 
-
-
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       className,
       clear,
       errorMessage,
+      id,
       label,
+      name,
       onChange,
       placeholder,
+      required,
       rootClassName = '',
       type,
       value,
@@ -61,21 +62,21 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       onChange?.(event)
     }
 
-
     const onClearHandler = (e: any) => {
       r?.current?.focus()
       clear?.(e)
     }
 
+    const inputId = useGenerateId(name, id)
+
     return (
       <div className={s.rootClassName}>
         {label && (
-          <label>
-            <Typography className={clsx(s.inputLabel)} variant={'body2'}>
+          <label className={clsx(s.label, required && s.required)} htmlFor={inputId}>
+            <Typography as={'p'} variant={'caption'}>
               {label}
             </Typography>
           </label>
-
         )}
 
         <div
@@ -88,6 +89,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             {...rest}
             className={clsx(s.input, { [s.error]: errorMessage }, className)}
+            id={inputId}
+            name={name}
             onChange={onChangeHandler}
             placeholder={placeholder}
             ref={r}

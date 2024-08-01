@@ -26,11 +26,6 @@
     background-color: var(--color-accent-500);
   }
 
-  &:focus {
-    background-color: var(--color-accent-500);
-    border: 2px solid var(--color-accent-700);
-  }
-
   &:disabled {
     background-color: var(--color-accent-700);
     color: var(--color-light-900);
@@ -47,11 +42,6 @@
 
   &:active {
     background-color: var(--color-dark-700);
-  }
-
-  &:focus {
-    background-color: var(--color-dark-300);
-    border: 1px solid var(--color-accent-300);
   }
 
   &:disabled {
@@ -76,11 +66,6 @@
     border: 1px solid currentColor;
   }
 
-  &:focus {
-    color: var(--color-accent-700);
-    border: 2px solid currentColor;
-  }
-
   &:disabled {
     color: var(--color-accent-900);
     border: 1px solid currentColor;
@@ -99,11 +84,6 @@
 
   &:active {
     color: var(--color-accent-700);
-  }
-
-  &:focus {
-    color: var(--color-accent-700);
-    border: 2px solid currentColor;
   }
 
   &:disabled {

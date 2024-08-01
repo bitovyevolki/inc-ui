@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ElementType } from 'react'
+import { ComponentPropsWithoutRef, ElementType, forwardRef } from 'react'
 
 import clsx from 'clsx'
 
@@ -10,7 +10,7 @@ export type ButtonProps<T extends ElementType = 'button'> = {
   variant?: 'ghost' | 'outlined' | 'primary' | 'secondary'
 } & ComponentPropsWithoutRef<T>
 
-export function Button<T extends ElementType = 'button'>(props: ButtonProps<T>) {
+function Button<T extends ElementType = 'button'>(props: ButtonProps<T>) {
   const { as, className, fullWidth = false, variant = 'primary', ...rest } = props
   const Component = as ?? 'button'
 
@@ -22,4 +22,8 @@ export function Button<T extends ElementType = 'button'>(props: ButtonProps<T>) 
   )
 }
 
-Button.displayName = 'Button'
+const ButtonWithFRef = forwardRef(Button)
+
+ButtonWithFRef.displayName = 'Button'
+
+export { ButtonWithFRef as Button }
