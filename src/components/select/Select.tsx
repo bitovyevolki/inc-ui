@@ -4,8 +4,8 @@ import * as S from '@radix-ui/react-select'
 import clsx from 'clsx'
 
 import s from './Select.module.scss'
+
 import { Typography } from '../typography'
-import { ArrowDownIcon } from '../../assets/icons/arrow-down'
 
 type SelectVariantType = 'large' | 'small'
 
@@ -20,21 +20,21 @@ export interface ISelectProps {
   errorMessage?: string
   onChange: (value: string) => void
   options: IOption[]
+  placeholder?: string
   title?: string
   value: string
   variant: SelectVariantType
-  placeholder?: string
 }
 
 export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
   (
-    { defaultValue, disabled, onChange, options, title, value, variant, placeholder, errorMessage },
+    { defaultValue, disabled, errorMessage, onChange, options, placeholder, title, value, variant },
     ref
   ) => {
     return (
       <>
         {title && (
-          <Typography variant="body1" className={s.title}>
+          <Typography className={s.title} variant={'body1'}>
             {title}
           </Typography>
         )}
@@ -58,10 +58,10 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
                 className={s.Icon}
                 fill={'none'}
                 height={'24'}
+                ref={ref}
                 viewBox={'0 0 24 24'}
                 width={'24'}
                 xmlns={'http://www.w3.org/2000/svg'}
-                ref={ref}
               >
                 <g clipPath={'url(#clip0_376_8949)'}>
                   <path
@@ -103,7 +103,7 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
           </S.Portal>
         </S.Root>
         {errorMessage && (
-          <Typography variant="body1" className={s.errorMessage}>
+          <Typography className={s.errorMessage} variant={'body1'}>
             {errorMessage}
           </Typography>
         )}

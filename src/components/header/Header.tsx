@@ -52,7 +52,8 @@ export const Header = ({
         <BellIcon />
 
         <Select
-          onValueChange={onLanguageChange}
+          // onValueChange={onLanguageChange}
+          onChange={onLanguageChange}
           options={options}
           value={selectedLanguage || 'ru'}
           variant={'large'}
@@ -64,7 +65,8 @@ export const Header = ({
       <Typography variant={'h1'}>{title}</Typography>
       <div className={s.actions}>
         <Select
-          onValueChange={() => {}}
+          // onValueChange={onLanguageChange}
+          onChange={onLanguageChange}
           options={options}
           value={selectedLanguage || 'ru'}
           variant={'large'}

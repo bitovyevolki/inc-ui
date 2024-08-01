@@ -1,4 +1,4 @@
-import { FieldValues, UseControllerProps, useController, Control } from 'react-hook-form'
+import { Control, FieldValues, UseControllerProps, useController } from 'react-hook-form'
 
 import { ISelectProps, Select } from '../select'
 
