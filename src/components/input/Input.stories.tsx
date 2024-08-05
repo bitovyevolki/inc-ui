@@ -36,7 +36,6 @@ export const DefaultExample: React.FC = () => {
   )
 }
 
-
 export const DisabledExample: React.FC = () => (
   <Input
     disabled
@@ -46,7 +45,6 @@ export const DisabledExample: React.FC = () => (
     value={''}
   />
 )
-
 
 export const WithErrorMessageExample: React.FC = () => (
   <Input
@@ -112,5 +110,30 @@ export const SearchWithErrorExample: React.FC = () => {
       type={'search'}
       value={value}
     />
+  )
+}
+export const EmailExample: React.FC = () => {
+  const [value, setValue] = useState<string | undefined>('')
+
+  const handleClear = () => {
+    setValue('')
+  }
+
+  return (
+    <form
+      onSubmit={() => {
+        console.log(value)
+      }}
+    >
+      <Input
+        clear={handleClear}
+        disabled={false}
+        label={'Email'}
+        onChange={e => setValue(e.target.value)}
+        placeholder={'Enter Email'}
+        type={'email'}
+        value={value}
+      />
+    </form>
   )
 }

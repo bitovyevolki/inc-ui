@@ -111,7 +111,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {errorMessage && (
-          <Typography className={clsx(s.error, s.errorMessage)} variant={'body1'}>
+          <Typography className={clsx(s.error, s.errorMessage)} variant={'caption'}>
             {errorMessage}
           </Typography>
         )}
