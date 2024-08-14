@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta} from '@storybook/react'
 
 import { type IOption } from '../select'
 import { Tabs } from './Tabs'
+import { useState } from 'react'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
@@ -17,7 +18,6 @@ const meta: Meta<typeof Tabs> = {
 } satisfies Meta<typeof Tabs>
 
 export default meta
-type Story = StoryObj<typeof meta>
 
 const options: ({ disabled: boolean } & IOption)[] = [
   { disabled: false, label: 'General information', value: '1' },
@@ -26,9 +26,8 @@ const options: ({ disabled: boolean } & IOption)[] = [
   { disabled: false, label: 'My payments', value: '4' },
 ]
 
-export const Large: Story = {
-  args: {
-    options,
-    value: options[0].value,
-  },
+export const BaseExample = () => {
+const [value, setValue] = useState(options[0].value)
+
+  return <Tabs options={options} value={value} onChange={setValue}/>
 }
