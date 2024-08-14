@@ -29,7 +29,7 @@ const options: IOption[] = [
   },
 ]
 
-interface IPaginationProps {
+export interface IPaginationProps {
   disabled?: boolean
   onChangePage: (page: number) => void
   onChangePortionSize: (size: number) => void
