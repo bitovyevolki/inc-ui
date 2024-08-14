@@ -30,7 +30,7 @@ const options: IOption[] = [
 ]
 
 interface IPaginationProps {
-  disabled: boolean
+  disabled?: boolean
   onChangePage: (page: number) => void
   onChangePortionSize: (size: number) => void
   page: number

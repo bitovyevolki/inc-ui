@@ -23,16 +23,14 @@ export const DatePicker = forwardRef<HTMLButtonElement, IDatePickerProps>(
   ({ value, disabled, errorMessage, label, onChange, Link }, ref) => {
     return (
       <div className={s.container}>
-         <label>
-          <Typography variant='body2' className={clsx(s.label, disabled && s.disabledTitle)}>
-          {label}
+        <label>
+          <Typography variant="body2" className={clsx(s.label, disabled && s.disabledTitle)}>
+            {label}
           </Typography>
-          </label>
+        </label>
         <Popover.Root>
           <Popover.Trigger ref={ref} className={clsx(s.PopoverTrigger, disabled && s.disabled)}>
-            <div
-              className={clsx(s.calBtn, errorMessage && s.calBtnError, disabled && s.disabled)}
-            >
+            <div className={clsx(s.calBtn, errorMessage && s.calBtnError, disabled && s.disabled)}>
               <span className={s.date}>{value ? getDateViewWithSlash(value) : 'Pick a date'}</span>
               <CalendarIcon className={s.calIcon} />
             </div>
@@ -41,9 +39,12 @@ export const DatePicker = forwardRef<HTMLButtonElement, IDatePickerProps>(
             <Calendar mode={'single'} onSelect={onChange} selected={value} />
           </Popover.Content>
         </Popover.Root>
-        {errorMessage && <Typography className={s.error} variant='caption'>{errorMessage}
-          {Link && Link}
-          </Typography>}
+        {errorMessage && (
+          <Typography className={s.error} variant="caption">
+            {errorMessage}
+            {Link && Link}
+          </Typography>
+        )}
       </div>
     )
   }
