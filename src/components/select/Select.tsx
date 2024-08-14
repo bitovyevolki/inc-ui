@@ -77,7 +77,6 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
                   </clipPath>
                 </defs>
               </svg>
-              {/* <ArrowDownIcon className={s.Icon} /> */}
             </S.Icon>
           </S.Trigger>
           <S.Portal>
