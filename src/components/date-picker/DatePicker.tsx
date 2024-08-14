@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import { getDateViewWithSlash } from './utils/date'
 import { forwardRef, ReactNode } from 'react'
 import { CalendarIcon } from '../../assets/icons/calendar'
+import { Typography } from '../typography'
 
 export interface IDatePickerProps {
   value: Date
@@ -22,7 +23,11 @@ export const DatePicker = forwardRef<HTMLButtonElement, IDatePickerProps>(
   ({ value, disabled, errorMessage, label, onChange, Link }, ref) => {
     return (
       <div className={s.container}>
-        <div className={clsx(s.label, disabled && s.disabledTitle)}>{label}</div>
+         <label>
+          <Typography variant='body2' className={clsx(s.label, disabled && s.disabledTitle)}>
+          {label}
+          </Typography>
+          </label>
         <Popover.Root>
           <Popover.Trigger ref={ref} className={clsx(s.PopoverTrigger, disabled && s.disabled)}>
             <div
@@ -36,9 +41,9 @@ export const DatePicker = forwardRef<HTMLButtonElement, IDatePickerProps>(
             <Calendar mode={'single'} onSelect={onChange} selected={value} />
           </Popover.Content>
         </Popover.Root>
-        {errorMessage && <div className={s.error}>{errorMessage}
+        {errorMessage && <Typography className={s.error} variant='caption'>{errorMessage}
           {errorMessage.includes('13') && Link && Link}
-          </div>}
+          </Typography>}
       </div>
     )
   }

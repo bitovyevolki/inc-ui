@@ -16,10 +16,10 @@ export const TextArea = forwardRef<ElementRef<'textarea'>, TextAreaProps>((props
   const { className, disabled, errorMessage, label, placeholder, ...rest } = props
 
   return (
-    <div className={clsx(s.warapper)}>
+    <div className={clsx(s.wrapper)}>
       {label && (
         <label>
-          <Typography className={clsx(s.label, disabled && s.disabled)} variant={'body1'}>
+          <Typography className={clsx(s.label, disabled && s.disabled)} variant={'body2'}>
             {label}
           </Typography>
         </label>
@@ -33,9 +33,9 @@ export const TextArea = forwardRef<ElementRef<'textarea'>, TextAreaProps>((props
         {...rest}
       />
       {errorMessage && (
-        <Typography className={s.errorMessage} variant={'body2'}>
+          <Typography className={s.errorMessage} variant={'caption'}>
           {errorMessage}
-        </Typography>
+        </Typography>       
       )}
     </div>
   )
