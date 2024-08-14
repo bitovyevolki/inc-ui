@@ -11,7 +11,7 @@ import { CalendarIcon } from '../../assets/icons/calendar'
 import { Typography } from '../typography'
 
 export interface IDatePickerProps {
-  value: Date
+  value?: Date
   disabled?: boolean
   errorMessage?: string
   label?: string
@@ -42,7 +42,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, IDatePickerProps>(
           </Popover.Content>
         </Popover.Root>
         {errorMessage && <Typography className={s.error} variant='caption'>{errorMessage}
-          {errorMessage.includes('13') && Link && Link}
+          {Link && Link}
           </Typography>}
       </div>
     )
