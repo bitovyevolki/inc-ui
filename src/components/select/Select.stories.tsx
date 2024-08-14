@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Select } from './Select'
+import { ISelectProps, Select } from './Select'
 import { useState } from 'react'
 
 const meta: Meta<typeof Select> = {
@@ -8,6 +8,10 @@ const meta: Meta<typeof Select> = {
     variant: {
       control: { type: 'radio' },
       options: ['small', 'large'],
+    },
+    value: {
+      control: { type: 'select' },
+      options: ['10', '20', '30', '50', '100'],
     },
   },
   component: Select,
@@ -32,6 +36,16 @@ const options = [
   { label: '50', value: '50' },
   { label: '100', value: '100' },
 ]
+
+export const BaseExample: Story = (args: ISelectProps) => {
+  return <Select {...args} />
+}
+
+BaseExample.args = {
+  options,
+  variant: 'large',
+  value: options[0].value,
+}
 
 export const LargeExample = () => {
   const [value, onChange] = useState(options[0].value)

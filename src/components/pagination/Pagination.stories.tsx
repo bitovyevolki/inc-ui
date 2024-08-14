@@ -1,10 +1,16 @@
-import type { Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Pagination } from './Pagination'
-import { useState } from 'react'
+import { IPaginationProps, Pagination } from './Pagination'
 
 const meta: Meta<typeof Pagination> = {
   component: Pagination,
+  argTypes: {
+    portionSize: {
+      control: 'select',
+      options: ['10', '20', '50', '100'],
+    },
+    onChangePage: { control: 'number' },
+  },
   decorators: [
     Story => (
       <div style={{ margin: '10px' }}>
@@ -18,17 +24,14 @@ const meta: Meta<typeof Pagination> = {
 
 export default meta
 
-export const BaseExample = () => {
-  const [page, setPage] = useState(1)
-  const [portionSize, setPortionSize] = useState(10)
+type Story = StoryObj<typeof meta>
 
-  return (
-    <Pagination
-      page={page}
-      onChangePage={setPage}
-      portionSize={portionSize}
-      onChangePortionSize={setPortionSize}
-      totalCount={500}
-    />
-  )
+export const BaseExample: Story = (args: IPaginationProps) => {
+  return <Pagination {...args} />
+}
+
+BaseExample.args = {
+  totalCount: 500,
+  page: 1,
+  portionSize: 10,
 }
