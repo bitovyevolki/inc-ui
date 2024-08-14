@@ -72,8 +72,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className={s.rootClassName}>
         {label && (
-          <label className={clsx(s.label, required && s.required)} htmlFor={inputId}>
-            <Typography as={'p'} variant={'caption'}>
+          <label  htmlFor={inputId}>
+            <Typography variant={'body2'}className={clsx(s.label, required && s.required)}>
               {label}
             </Typography>
           </label>
@@ -109,7 +109,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             />
           </div>
         </div>
-
         {errorMessage && (
           <Typography className={clsx(s.error, s.errorMessage)} variant={'caption'}>
             {errorMessage}

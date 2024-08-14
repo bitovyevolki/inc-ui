@@ -34,7 +34,7 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
     return (
       <>
         {title && (
-          <Typography className={s.title} variant={'body1'}>
+          <Typography className={s.title} variant={'body2'}>
             {title}
           </Typography>
         )}
@@ -103,7 +103,7 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
           </S.Portal>
         </S.Root>
         {errorMessage && (
-          <Typography className={s.errorMessage} variant={'body1'}>
+          <Typography className={s.errorMessage} variant={'caption'}>
             {errorMessage}
           </Typography>
         )}

@@ -17,8 +17,7 @@
 }
 
 .label {
-  color: var(--color-light-900);
-  line-height: var(--line-height-m);
+  color: var(--color-light-900) !important;
 }
 
 .calBtn {
@@ -53,7 +52,6 @@
 }
 
 .error {
-  margin-top: 2px;
   color: var(--color-danger-500);
   line-height: var(--line-height-s);
   font-size: 12px;
