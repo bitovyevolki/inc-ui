@@ -72,8 +72,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className={s.rootClassName}>
         {label && (
-          <label  htmlFor={inputId}>
-            <Typography variant={'body2'}className={clsx(s.label, required && s.required)}>
+          <label htmlFor={inputId}>
+            <Typography variant={'body2'} className={clsx(s.label, required && s.required)}>
               {label}
             </Typography>
           </label>

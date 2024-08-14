@@ -33,9 +33,9 @@ export const TextArea = forwardRef<ElementRef<'textarea'>, TextAreaProps>((props
         {...rest}
       />
       {errorMessage && (
-          <Typography className={s.errorMessage} variant={'caption'}>
+        <Typography className={s.errorMessage} variant={'caption'}>
           {errorMessage}
-        </Typography>       
+        </Typography>
       )}
     </div>
   )

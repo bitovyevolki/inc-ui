@@ -36,31 +36,64 @@ const options = [
 export const LargeExample = () => {
   const [value, onChange] = useState(options[0].value)
 
-  return <Select value={value} onChange={onChange}  title={'Portion size'} variant='large' options={options}/>
+  return (
+    <Select
+      value={value}
+      onChange={onChange}
+      title={'Portion size'}
+      variant="large"
+      options={options}
+    />
+  )
 }
 
 export const SmallExample = () => {
   const [value, onChange] = useState(options[0].value)
 
-  return <Select value={value} onChange={onChange}  title={'Portion size'} variant='small' options={options}/>
+  return (
+    <Select
+      value={value}
+      onChange={onChange}
+      title={'Portion size'}
+      variant="small"
+      options={options}
+    />
+  )
 }
 
 export const WithoutLabelExample = () => {
   const [value, onChange] = useState(options[0].value)
 
-  return <Select value={value} onChange={onChange} variant='large' options={options}/>
+  return <Select value={value} onChange={onChange} variant="large" options={options} />
 }
 
 export const WithPlaceholderExample = () => {
   const [value, onChange] = useState('')
 
-  return <Select placeholder='Country' value={value} onChange={onChange} variant='large' options={options}/>
+  return (
+    <Select
+      placeholder="Country"
+      value={value}
+      onChange={onChange}
+      variant="large"
+      options={options}
+    />
+  )
 }
 
 export const WithErrorExample = () => {
   const [value, onChange] = useState(options[0].value)
 
-  return <Select value={value} onChange={onChange} variant='large' errorMessage='Some error' options={options}  title='Portion size'/>
+  return (
+    <Select
+      value={value}
+      onChange={onChange}
+      variant="large"
+      errorMessage="Some error"
+      options={options}
+      title="Portion size"
+    />
+  )
 }
 
 export const DisabledExample: Story = {

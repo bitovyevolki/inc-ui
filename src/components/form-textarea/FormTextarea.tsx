@@ -7,7 +7,11 @@ export type FormTextareaProps<T extends FieldValues> = {
 } & Omit<TextAreaProps, 'onChange' | 'value'> &
   UseControllerProps<T>
 
-export function FormTextarea<T extends FieldValues>({ control, name, ...rest }: FormTextareaProps<T>) {
+export function FormTextarea<T extends FieldValues>({
+  control,
+  name,
+  ...rest
+}: FormTextareaProps<T>) {
   const {
     field,
     fieldState: { error },
