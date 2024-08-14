@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Select } from './Select'
+import { useState } from 'react'
 
 const meta: Meta<typeof Select> = {
   argTypes: {
@@ -32,56 +33,42 @@ const options = [
   { label: '100', value: '100' },
 ]
 
-export const Large: Story = {
-  args: {
-    options,
-    title: 'Portion size',
-    value: options[0].value,
-    variant: 'large',
-  },
+export const LargeExample = () => {
+  const [value, onChange] = useState(options[0].value)
+
+  return <Select value={value} onChange={onChange}  title={'Portion size'} variant='large' options={options}/>
 }
 
-export const WithoutTitle: Story = {
-  args: {
-    options,
-    value: options[0].value,
-    variant: 'small',
-  },
+export const SmallExample = () => {
+  const [value, onChange] = useState(options[0].value)
+
+  return <Select value={value} onChange={onChange}  title={'Portion size'} variant='small' options={options}/>
 }
 
-export const WithPlaceholder: Story = {
-  args: {
-    options,
-    placeholder: 'Country',
-    variant: 'large',
-  },
+export const WithoutLabelExample = () => {
+  const [value, onChange] = useState(options[0].value)
+
+  return <Select value={value} onChange={onChange} variant='large' options={options}/>
 }
 
-export const Small: Story = {
-  args: {
-    options,
-    title: 'Portion size',
-    value: options[0].value,
-    variant: 'small',
-  },
+export const WithPlaceholderExample = () => {
+  const [value, onChange] = useState('')
+
+  return <Select placeholder='Country' value={value} onChange={onChange} variant='large' options={options}/>
 }
 
-export const WithError: Story = {
-  args: {
-    options,
-    title: 'Portion size',
-    value: options[0].value,
-    variant: 'large',
-    errorMessage: 'Some error',
-  },
+export const WithErrorExample = () => {
+  const [value, onChange] = useState(options[0].value)
+
+  return <Select value={value} onChange={onChange} variant='large' errorMessage='Some error' options={options}  title='Portion size'/>
 }
 
-export const Disabled: Story = {
+export const DisabledExample: Story = {
   args: {
     disabled: true,
     options,
     title: 'Portion size',
     value: options[0].value,
-    variant: 'small',
+    variant: 'large',
   },
 }
