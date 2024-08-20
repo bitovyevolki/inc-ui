@@ -2,7 +2,7 @@ import * as SliderRadix from '@radix-ui/react-slider'
 
 import s from './Slider.module.scss'
 
-type SliderProps = {
+export type SliderProps = {
   onValueChange: (value: number[]) => void
   value: number[]
 } & SliderRadix.SliderProps

@@ -1,6 +1,6 @@
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 
 import s from './text-area.module.scss'
 

@@ -8,7 +8,7 @@ import { Tabs } from './Tabs'
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
   decorators: [
-    Story => (
+    (Story: () => JSX.Element) => (
       <div style={{ margin: '10px' }}>
         <Story />
       </div>

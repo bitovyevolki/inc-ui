@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react'
 
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 
 import s from './card.module.scss'
 

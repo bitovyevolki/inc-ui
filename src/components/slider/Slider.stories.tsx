@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 
 import { Slider } from '.'
+import { type SliderProps } from './Slider'
 
 const meta = {
   argTypes: {},
@@ -21,7 +22,7 @@ export const SliderStory: Story = {
     onValueChange: () => {},
     value: [5],
   },
-  render: args => {
+  render: (args: SliderProps) => {
     const [sliderValue, setSliderValue] = useState<number[]>(args.value)
 
     return (

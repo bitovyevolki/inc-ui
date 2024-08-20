@@ -6,7 +6,7 @@ import {
   forwardRef,
 } from 'react'
 
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 
 import s from './button.module.scss'
 

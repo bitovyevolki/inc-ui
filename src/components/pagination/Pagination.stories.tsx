@@ -12,7 +12,7 @@ const meta: Meta<typeof Pagination> = {
   },
   component: Pagination,
   decorators: [
-    Story => (
+    (Story: () => JSX.Element) => (
       <div style={{ margin: '10px' }}>
         <Story />
       </div>

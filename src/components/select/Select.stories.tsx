@@ -17,7 +17,7 @@ const meta: Meta<typeof Select> = {
   },
   component: Select,
   decorators: [
-    Story => (
+    (Story: () => JSX.Element) => (
       <div style={{ margin: '10px' }}>
         <Story />
       </div>

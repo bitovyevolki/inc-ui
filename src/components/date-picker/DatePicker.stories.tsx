@@ -7,7 +7,7 @@ import { DatePicker } from './DatePicker'
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
   decorators: [
-    Story => (
+    (Story: () => JSX.Element) => (
       <div style={{ height: '400px', margin: '10px' }}>
         <Story />
       </div>

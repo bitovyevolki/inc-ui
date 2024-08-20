@@ -1,7 +1,7 @@
 import { ReactNode, forwardRef } from 'react'
 
 import * as Popover from '@radix-ui/react-popover'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 
 import s from './DatePicker.module.scss'
 

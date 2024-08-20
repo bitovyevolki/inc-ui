@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { useState } from 'react'
 
-import { RadioGroup } from './RadioGroup'
+import { RadioGroup, type RadioGroupProps } from './RadioGroup'
 
 const meta = {
   component: RadioGroup,
@@ -25,7 +25,7 @@ export const DefaultControlledGroup: Story = {
     value: '1',
   },
 
-  render: args => {
+  render: (args: RadioGroupProps) => {
     const [value, setValue] = useState(args.value)
 
     return (

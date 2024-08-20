@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react'
 
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 
 import s from './Input.module.scss'
 

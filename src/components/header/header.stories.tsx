@@ -27,7 +27,7 @@ export const AuthExample: Story = {
   },
 } satisfies Story
 export const ChangeLanguageExample: Story = {
-  render: args => {
+  render: (args: Story['args']) => {
     const [selectedLanguage, setSelectedLanguage] = useState<LanguageType>('en')
 
     const handleLanguageChange = (value: string) => {

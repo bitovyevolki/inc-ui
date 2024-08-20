@@ -1,7 +1,7 @@
 import { type ElementRef, type ReactNode, forwardRef } from 'react'
 
 import * as S from '@radix-ui/react-select'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 
 import s from './Select.module.scss'
 
