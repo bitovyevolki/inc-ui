@@ -3,14 +3,14 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { IPaginationProps, Pagination } from './Pagination'
 
 const meta: Meta<typeof Pagination> = {
-  component: Pagination,
   argTypes: {
+    onChangePage: { control: 'number' },
     portionSize: {
       control: 'select',
       options: ['10', '20', '50', '100'],
     },
-    onChangePage: { control: 'number' },
   },
+  component: Pagination,
   decorators: [
     Story => (
       <div style={{ margin: '10px' }}>
@@ -31,7 +31,7 @@ export const BaseExample: Story = (args: IPaginationProps) => {
 }
 
 BaseExample.args = {
-  totalCount: 500,
   page: 1,
   portionSize: 10,
+  totalCount: 500,
 }

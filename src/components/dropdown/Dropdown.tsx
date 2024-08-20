@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
 import s from './Dropdown.module.scss'
+
 import { Typography } from '../typography'
 
 type DropdownProps = {

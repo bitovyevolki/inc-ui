@@ -1,4 +1,4 @@
-import { forwardRef, Ref, SVGProps } from 'react'
+import { Ref, SVGProps, forwardRef } from 'react'
 
 const LeftArrowSvg = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => {
   return (

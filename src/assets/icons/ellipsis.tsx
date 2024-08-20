@@ -1,4 +1,4 @@
-import { forwardRef, Ref, SVGProps } from 'react'
+import { Ref, SVGProps, forwardRef } from 'react'
 
 const EllipsisSvg = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => {
   return (

@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { DatePicker } from './DatePicker'
 import { useState } from 'react'
+
+import { DatePicker } from './DatePicker'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
@@ -22,7 +23,7 @@ type Story = StoryObj<typeof meta>
 export const BaseExample = () => {
   const [value, onChange] = useState<Date>()
 
-  return <DatePicker value={value} onChange={onChange} label="Date of birth" />
+  return <DatePicker label={'Date of birth'} onChange={onChange} value={value} />
 }
 
 export const WithErrorExample = () => {
@@ -31,9 +32,9 @@ export const WithErrorExample = () => {
   return (
     <DatePicker
       errorMessage={'Incorrect date'}
-      value={value}
+      label={'Date of birth'}
       onChange={onChange}
-      label="Date of birth"
+      value={value}
     />
   )
 }
@@ -43,15 +44,15 @@ export const WithErrorLinkExample = () => {
 
   return (
     <DatePicker
-      errorMessage={'Incorrect date'}
       Link={
-        <a href="/" style={{ marginLeft: '4px' }}>
+        <a href={'/'} style={{ marginLeft: '4px' }}>
           Privacy policy
         </a>
       }
-      value={value}
+      errorMessage={'Incorrect date'}
+      label={'Date of birth'}
       onChange={onChange}
-      label="Date of birth"
+      value={value}
     />
   )
 }
@@ -59,7 +60,7 @@ export const WithErrorLinkExample = () => {
 export const WithInitValueExample = () => {
   const [value, onChange] = useState<Date | undefined>(new Date())
 
-  return <DatePicker value={value} onChange={onChange} label="Date of birth" />
+  return <DatePicker label={'Date of birth'} onChange={onChange} value={value} />
 }
 
 export const DisabledExample: Story = {

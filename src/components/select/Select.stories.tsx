@@ -1,17 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { ISelectProps, Select } from './Select'
 import { useState } from 'react'
+
+import { ISelectProps, Select } from './Select'
 
 const meta: Meta<typeof Select> = {
   argTypes: {
-    variant: {
-      control: { type: 'radio' },
-      options: ['small', 'large'],
-    },
     value: {
       control: { type: 'select' },
       options: ['10', '20', '30', '50', '100'],
+    },
+    variant: {
+      control: { type: 'radio' },
+      options: ['small', 'large'],
     },
   },
   component: Select,
@@ -43,8 +44,8 @@ export const BaseExample: Story = (args: ISelectProps) => {
 
 BaseExample.args = {
   options,
-  variant: 'large',
   value: options[0].value,
+  variant: 'large',
 }
 
 export const LargeExample = () => {
@@ -52,11 +53,11 @@ export const LargeExample = () => {
 
   return (
     <Select
-      value={value}
       onChange={onChange}
-      title={'Portion size'}
-      variant="large"
       options={options}
+      title={'Portion size'}
+      value={value}
+      variant={'large'}
     />
   )
 }
@@ -66,11 +67,11 @@ export const SmallExample = () => {
 
   return (
     <Select
-      value={value}
       onChange={onChange}
-      title={'Portion size'}
-      variant="small"
       options={options}
+      title={'Portion size'}
+      value={value}
+      variant={'small'}
     />
   )
 }
@@ -78,7 +79,7 @@ export const SmallExample = () => {
 export const WithoutLabelExample = () => {
   const [value, onChange] = useState(options[0].value)
 
-  return <Select value={value} onChange={onChange} variant="large" options={options} />
+  return <Select onChange={onChange} options={options} value={value} variant={'large'} />
 }
 
 export const WithPlaceholderExample = () => {
@@ -86,11 +87,11 @@ export const WithPlaceholderExample = () => {
 
   return (
     <Select
-      placeholder="Country"
-      value={value}
       onChange={onChange}
-      variant="large"
       options={options}
+      placeholder={'Country'}
+      value={value}
+      variant={'large'}
     />
   )
 }
@@ -100,12 +101,12 @@ export const WithErrorExample = () => {
 
   return (
     <Select
-      value={value}
+      errorMessage={'Some error'}
       onChange={onChange}
-      variant="large"
-      errorMessage="Some error"
       options={options}
-      title="Portion size"
+      title={'Portion size'}
+      value={value}
+      variant={'large'}
     />
   )
 }

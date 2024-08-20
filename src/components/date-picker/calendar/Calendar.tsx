@@ -10,22 +10,21 @@ export type CalendarProps = React.ComponentProps<typeof DayPicker>
 export const Calendar = ({ showOutsideDays = true, ...props }: CalendarProps) => {
   return (
     <DayPicker
-      captionLayout="dropdown"
+      captionLayout={'dropdown'}
       className={s.root}
       classNames={{
         button_next: s.navBtn,
         button_previous: s.navBtn,
         caption_label: s.captionLabel,
-        months_dropdown: s.monthsDropdown,
+        chevron: s.chevron,
         day: s.day,
-        month: s.month,
-        months: s.months,
+        dropdown: s.dropdown,
         dropdown_root: s.dropdownRoot,
         dropdowns: s.dropdowns,
-        dropdown: s.dropdown,
-        chevron: s.chevron,
+        month: s.month,
         month_caption: s.monthCaption,
-        years_dropdown: s.yearsDropdown,
+        months: s.months,
+        months_dropdown: s.monthsDropdown,
         nav: s.nav,
         outside: s.outside,
         range_end: s.range_end,
@@ -33,6 +32,7 @@ export const Calendar = ({ showOutsideDays = true, ...props }: CalendarProps) =>
         today: s.today,
         weekday: s.weekDay,
         weeks: s.weeks,
+        years_dropdown: s.yearsDropdown,
       }}
       showOutsideDays={showOutsideDays}
       weekStartsOn={1}

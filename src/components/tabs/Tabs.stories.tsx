@@ -1,8 +1,9 @@
 import type { Meta } from '@storybook/react'
 
+import { useState } from 'react'
+
 import { type IOption } from '../select'
 import { Tabs } from './Tabs'
-import { useState } from 'react'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
@@ -29,5 +30,5 @@ const options: ({ disabled: boolean } & IOption)[] = [
 export const BaseExample = () => {
   const [value, setValue] = useState(options[0].value)
 
-  return <Tabs options={options} value={value} onChange={setValue} />
+  return <Tabs onChange={setValue} options={options} value={value} />
 }

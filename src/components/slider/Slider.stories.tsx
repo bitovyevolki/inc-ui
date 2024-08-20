@@ -18,8 +18,8 @@ export const SliderStory: Story = {
   args: {
     max: 10,
     min: 0,
-    value: [5],
     onValueChange: () => {},
+    value: [5],
   },
   render: args => {
     const [sliderValue, setSliderValue] = useState<number[]>(args.value)

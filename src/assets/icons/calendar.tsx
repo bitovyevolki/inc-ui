@@ -1,14 +1,14 @@
-import { forwardRef, Ref, SVGProps } from 'react'
+import { Ref, SVGProps, forwardRef } from 'react'
 
 const CalendarIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => {
   return (
     <svg
       fill={'none'}
       height={'24'}
+      ref={ref}
       viewBox={'0 0 24 24'}
       width={'24'}
       xmlns={'http://www.w3.org/2000/svg'}
-      ref={ref}
       {...props}
     >
       <g clipPath={'url(#clip0_348_7032)'}>
