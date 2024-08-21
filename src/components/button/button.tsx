@@ -14,7 +14,7 @@ type ButtonVariant = 'ghost' | 'outlined' | 'primary' | 'secondary'
 
 type ButtonProps<T extends ElementType = 'button'> = {
   as?: T
-  fullwidth?: boolean
+  fullWidth?: boolean
   variant?: ButtonVariant
 } & ComponentPropsWithoutRef<T>
 
@@ -22,7 +22,7 @@ const ButtonPolymorph = <T extends ElementType = 'button'>(props: ButtonProps<T>
   const {
     as,
     className,
-    fullwidth,
+    fullWidth,
     type = !as || as === 'button' ? 'button' : undefined,
     variant = 'primary',
     ...restProps
@@ -31,7 +31,7 @@ const ButtonPolymorph = <T extends ElementType = 'button'>(props: ButtonProps<T>
 
   return (
     <Component
-      className={clsx(s.button, s[variant], fullwidth && s.fullWidth, className)}
+      className={clsx(s.button, s[variant], fullWidth && s.fullWidth, className)}
       type={type}
       {...restProps}
       ref={ref}
