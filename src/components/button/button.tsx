@@ -10,7 +10,7 @@ import { clsx } from 'clsx'
 
 import s from './button.module.scss'
 
-type ButtonVariant = 'outlined' | 'primary' | 'secondary' | 'text'
+type ButtonVariant = 'ghost' | 'outlined' | 'primary' | 'secondary'
 
 type ButtonProps<T extends ElementType = 'button'> = {
   as?: T
