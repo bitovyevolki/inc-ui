@@ -3,9 +3,9 @@ import s from './header.module.scss'
 import { BellIcon } from '../../assets/icons/bell'
 import { FlagRussia } from '../../assets/icons/flag-russia'
 import { FlagUnitedKingdom } from '../../assets/icons/flag-united-kingdom'
+import { Button } from '../button'
 import { type IOption, Select } from '../select'
 import { Typography } from '../typography'
-
 export type LanguageType = 'en' | 'ru'
 export type HeaderProps = {
   isAuth: boolean
@@ -42,7 +42,7 @@ export const Header = ({
   onLanguageChange,
   selectedLanguage,
   signInSrc,
-  // signUpSrc,
+  signUpSrc,
   title,
 }: HeaderProps) => {
   return isAuth ? (
@@ -75,9 +75,9 @@ export const Header = ({
         <Typography as={'a'} className={s.loginButton} href={signInSrc} variant={'link1'}>
           {'Login'}
         </Typography>
-        {/*<Button as={'a'} href={signUpSrc} variant={'primary'}>*/}
-        {/*  {'Sing Up'}*/}
-        {/*</Button>*/}
+        <Button as={'a'} href={signUpSrc} variant={'primary'}>
+          {'Sing Up'}
+        </Button>
       </div>
     </header>
   )
