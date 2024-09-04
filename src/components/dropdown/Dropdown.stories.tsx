@@ -21,7 +21,7 @@ export const Default: Story = {
   args: {
     title: 'Dropdown menu',
   },
-  render: (args: { title: string }) => (
+  render: args => (
     <Dropdown title={args.title} trigger={<BellIcon />}>
       <DropdownItem arrow={false} icon={<BellIcon />} title={'Learn'} />
       <DropdownItem icon={<BellIcon />} title={'Edit'} />

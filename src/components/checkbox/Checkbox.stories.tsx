@@ -54,7 +54,7 @@ export const Controlled: Story = {
     label: 'Click here',
     onChange: () => {},
   },
-  render: (args: { checked: boolean; label: string; onChange: () => void }) => {
+  render: args => {
     const [checkedState, setCheckedState] = useState<boolean>(args.checked)
 
     return (
