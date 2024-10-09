@@ -2,7 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { useState } from 'react'
 
-import { ISelectProps, Select } from './Select'
+import s from './Select.module.scss'
+
+import { FormSelect } from '../form-select'
+import { IOption, ISelectProps, Select } from './Select'
+import countriesJson from './countries.json'
+
+const countries: IOption[] = countriesJson.map(el => ({ label: el.name, value: el.code }))
 
 const meta: Meta<typeof Select> = {
   argTypes: {
@@ -46,6 +52,22 @@ BaseExample.args = {
   options,
   value: options[0].value,
   variant: 'large',
+}
+
+export const ExampleWithLargePortionOptions = () => {
+  const [value, onChange] = useState(countries[0].value)
+
+  return (
+    <>
+      <Select
+        onChange={onChange}
+        options={countries}
+        title={'Country'}
+        value={value}
+        variant={'large'}
+      />
+    </>
+  )
 }
 
 export const LargeExample = () => {
