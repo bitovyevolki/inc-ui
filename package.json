@@ -50,7 +50,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^8.2.9",
     "stylelint": "^16.8.2",
-    "typescript": "^5.5.3",
+    "typescript": "5.4.2",
     "vite": "^5.4.1",
     "vite-plugin-dts": "4.0.0-beta.1"
   },
@@ -62,6 +62,7 @@
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-popover": "1.1.1",
     "@radix-ui/react-radio-group": "^1.2.0",
+    "@radix-ui/react-scroll-area": "^1.2.0",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slider": "^1.2.0",
     "@radix-ui/react-tabs": "^1.1.0",
