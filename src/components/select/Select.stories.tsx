@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { useState } from 'react'
-
-import s from './Select.module.scss'
-
-import { FormSelect } from '../form-select'
 import { IOption, ISelectProps, Select } from './Select'
 import countriesJson from './countries.json'
 

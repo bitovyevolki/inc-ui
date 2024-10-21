@@ -1,3 +1,5 @@
+import { clsx } from 'clsx'
+
 import s from './header.module.scss'
 
 import { BellIcon } from '../../assets/icons/bell'
@@ -8,6 +10,7 @@ import { type IOption, Select } from '../select'
 import { Typography } from '../typography'
 export type LanguageType = 'en' | 'ru'
 export type HeaderProps = {
+  className?: string
   isAuth: boolean
   onLanguageChange: (value: string) => void
   selectedLanguage?: LanguageType
@@ -38,6 +41,7 @@ const options: IOption[] = [
 ]
 
 export const Header = ({
+  className,
   isAuth,
   onLanguageChange,
   selectedLanguage,
@@ -46,13 +50,11 @@ export const Header = ({
   title,
 }: HeaderProps) => {
   return isAuth ? (
-    <header className={s.header}>
+    <header className={clsx(s.header, className)}>
       <Typography variant={'h1'}>{title}</Typography>
       <div className={s.actions}>
         <BellIcon />
-
         <Select
-          // onValueChange={onLanguageChange}
           onChange={onLanguageChange}
           options={options}
           value={selectedLanguage || 'ru'}
@@ -61,11 +63,10 @@ export const Header = ({
       </div>
     </header>
   ) : (
-    <header className={s.header}>
+    <header className={clsx(s.header, className)}>
       <Typography variant={'h1'}>{title}</Typography>
       <div className={s.actions}>
         <Select
-          // onValueChange={onLanguageChange}
           onChange={onLanguageChange}
           options={options}
           value={selectedLanguage || 'ru'}
